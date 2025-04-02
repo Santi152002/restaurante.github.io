@@ -1,0 +1,7 @@
+body {
+    background-image: url('image/ChatGPT\ Image\ 1\ abr\ 2025\,\ 09_06_21\ p.m..png'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+}
