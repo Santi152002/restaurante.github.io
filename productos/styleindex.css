@@ -53,6 +53,8 @@ body {
     z-index: 1000;
 }
 
+/* barra principal */
+
 .navbar {
     display: flex;
 }
@@ -124,6 +126,8 @@ body {
     cursor: pointer;
     display: none;
 }
+
+/* hasta aca llega la barra principal */
 
 .header-content {
     margin-top: 200px;
