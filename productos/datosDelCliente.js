@@ -1,12 +1,3 @@
-// ACA SE VA A TOMAR LA ID DE LOS PRODUCTOS:
-
-let carrito = [
-  // Ejemplo de productos en el carrito
-  { id: 1, nombre: "hamburguesa", cantidad: 2, precio: 5000 },
-  { id: 2, nombre: "Burrito", cantidad: 1, precio: 2000 }
-  // Puedes agregar más productos aquí
-];
-
 
 
 // ACA SE REALIZA LOS DATOS DEL CLIENTE:
@@ -16,21 +7,16 @@ function realizarPedido() {
     if (carrito.length === 0) {
       alert("Debes seleccionar al menos un producto en tu carrito antes de realizar el pedido.");
       return;  // Detiene la función si no hay productos en el carrito
+    }else{
+
+    // Oculta el carrito y abre la ventana de datos del cliente
+    document.getElementById("carritoPanel").style.display = "none";
+    document.getElementById("ventanaDatosCliente").style.display = "block";
     }
   
-    // Oculta el carrito y abre la ventana de datos del cliente
-    document.getElementById("carritoPanel").style.display = "none";
-    document.getElementById("ventanaDatosCliente").style.display = "block";
   }
   
 
-
-function realizarPedido() {
-    // Oculta el carrito y abre la ventana de datos del cliente
-    document.getElementById("carritoPanel").style.display = "none";
-    document.getElementById("ventanaDatosCliente").style.display = "block";
-  }
-  
   function cerrarVentanaDatosCliente() {
     document.getElementById("ventanaDatosCliente").style.display = "none";
   }
@@ -103,8 +89,10 @@ function realizarPedido() {
   
       // Verificar si el archivo es .jpg
       const extension = archivo.name.split('.').pop().toLowerCase();
-      if (extension !== "jpg") {
-        errorComprobante.textContent = "El comprobante debe ser una imagen en formato JPG.";
+      console.log(extension);
+      
+      if (extension !== "jpg" && extension !== "pdf" && extension !== "png") {
+        errorComprobante.textContent = "El comprobante debe ser una imagen en formato JPG, PDF O PNG.";
         errorComprobante.style.display = "inline";
         archivoComprobante.value = ""; // limpia el input
         archivoComprobante.focus();
