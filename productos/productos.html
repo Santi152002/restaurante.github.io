@@ -11,6 +11,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
     <!--boostrap-->
 
     <!--iconos-->
@@ -95,6 +96,15 @@
       </div>
 
       <!--ACA VA LOS DATOS PERSONALES DEL CLIENTE AL MOMENTO DE REALIZAR EL PAGO-->
+
+
+      <div id="modalCarritoVacio" class="modal-carrito-vacio">
+        <div class="modal-contenido">
+          <p>Debes seleccionar al menos un producto en tu carrito antes de realizar el pedido.</p>
+          <button onclick="cerrarModalCarrito()" class="btn-modal">Aceptar</button>
+        </div>
+      </div>
+      
 
       <div id="ventanaDatosCliente" class="ventana">
         <div class="detalle-producto">
@@ -184,7 +194,9 @@
                 </div>
 
                 <br />
-                <button type="submit" class="BotonPedido">Pagar</button>
+                <div class="contenedor-boton">
+                  <button type="submit" class="BotonPedido">Pagar</button>
+                </div>                
               </div>
             </div>
           </form>
@@ -692,12 +704,15 @@
 
     <section class="horario" id="horario">
       <div class="horario-info container">
-        <h2>Horario</h2>
-        <div class="horario-txt">
-          <div class="txt">
-            <p>Luneas A Viernes: 9am - 8pm</p>
-            <p>Sabados Y Domingos: 11am - 7pm</p>
+        <div class="horario-contenido">
+          <div class="horario-texto">
+            <h2>Horario</h2>
+            <div class="horario-txt">
+              <p>Lunes a Viernes: 9am - 8pm</p>
+              <p>Sábados y Domingos: 11am - 7pm</p>
+            </div>
           </div>
+          <img src="images/Horario.png" alt="Horario" class="horario-img">
         </div>
       </div>
     </section>

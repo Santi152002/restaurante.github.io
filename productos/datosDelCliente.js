@@ -3,19 +3,21 @@
 // ACA SE REALIZA LOS DATOS DEL CLIENTE:
 
 function realizarPedido() {
-    // Verificar si el carrito tiene productos
-    if (carrito.length === 0) {
-      alert("Debes seleccionar al menos un producto en tu carrito antes de realizar el pedido.");
-      return;  // Detiene la función si no hay productos en el carrito
-    }else{
-
-    // Oculta el carrito y abre la ventana de datos del cliente
+  if (carrito.length === 0) {
+    // Mostrar modal en vez de alert
+    document.getElementById("modalCarritoVacio").style.display = "flex";
+    return;
+  } else {
     document.getElementById("carritoPanel").style.display = "none";
     document.getElementById("ventanaDatosCliente").style.display = "block";
-    }
-  
   }
-  
+}
+
+function cerrarModalCarrito() {
+  document.getElementById("modalCarritoVacio").style.display = "none";
+}
+
+// VENTANA DE DATOS DE CLIENTE
 
   function cerrarVentanaDatosCliente() {
     document.getElementById("ventanaDatosCliente").style.display = "none";
@@ -87,7 +89,7 @@ function realizarPedido() {
         return;
       }
   
-      // Verificar si el archivo es .jpg
+      // Verificar si el archivo es .jpg, pdf, png.
       const extension = archivo.name.split('.').pop().toLowerCase();
       console.log(extension);
       
