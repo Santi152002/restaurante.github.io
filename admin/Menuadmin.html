@@ -1,0 +1,107 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="menuadmin.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="menu container">
+          <img class="logo-1" src="/inicio/images/logoprincipal.jpeg" alt="" />
+          <input type="checkbox" id="menu" />
+          <label for="menu">
+            <img src="images/menu.png" class="menu-icono" alt="" />
+          </label>
+          <!-- barra de navegacion -->
+          <nav class="navbar">
+              <img class="logo-2" src="/inicio/images/logoprincipal.jpeg" alt="" />
+            <div class="menu-1">
+              <ul>
+                <li><a href="/inicio/index.html">INICIO</a></li>
+                <li><a href="../productos/productos.html">ADMINISTRACION DE EMPLEADOS</a></li>
+                <li><a href="#">INVENTARIO DE PRODUCTOS</a></li>
+                <li><a href="#">PEDIDOS</a></li>
+              </ul>
+            </div>
+            </nav>
+          </header>
+  <!-- Aqui finaliza la barra superior -->
+  <h3 class="titulo">ADMINISTRACION DE EMPLEADOS</h3>
+
+  <div class="opcionesmenu1">
+    <div class="empleados">
+      <span contenteditable="false" class="nombre-empleado">NOMBRE DE EMPLEADO</span>
+      <div class="iconos">
+        <a href="#" class="abrir-editar" data-id="1">
+          <ion-icon name="person-outline"></ion-icon>
+        </a>
+        <a href="#" class="abrir-eliminar" data-id="1">
+          <ion-icon name="trash-outline"></ion-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+
+    
+      
+
+  <div class="guardar">
+    <ul>
+      <li><a href="#" id="abrirModalCrear">CREAR USUARIO DE EMPLEADO</a></li>
+    </ul>
+  </div>
+  <!-- Ventanas flotantes para el humano-->
+  <div class="modal" id="modalEditar">
+    <div class="modal-contenido">
+      <span class="cerrar cerrar-editar">&times;</span>
+      <h2>Editar Información del Empleado</h2>
+      <form id="formEditar">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre">
+  
+        <label for="correo">Nombre de usuario</label>
+        <input type="text" id="text" name="correo">
+  
+        <label for="rol">Contraseña:</label>
+        <input type="password" id="contraseña" name="rol">
+
+        <label for="rol">Rol</label>
+        <input type="text" id="rol" name="rol">
+  
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Ventanas flotantes para borrar-->
+
+  <div class="modal" id="modalEliminar">
+    <div class="modal-contenido">
+      <span class="cerrar cerrar-eliminar">&times;</span>
+      <h2>¿Estás seguro de eliminar al empleado?</h2>
+      <button id="confirmarEliminar">Sí, eliminar</button>
+    </div>
+  </div>
+  
+  <div id="modalCrear" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" id="cerrarModalCrear">&times;</span>
+      <h2>Crear Usuario de Empleado</h2>
+      <form id="formCrearEmpleado">
+        <input type="text" placeholder="Nombre completo" id="nombreCompleto" required><br>
+        <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" required><br>
+        <input type="password" placeholder="Contraseña" id="contrasena" required><br>
+        <input type="text" placeholder="Rol" id="rol" required><br><br>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="menuadmin.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+  </html>

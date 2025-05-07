@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Redireccionar tras 1 segundo
       setTimeout(() => {
         // Esta es la redirección al archivo 'index.html' dentro de la carpeta 'Administrador'
-        window.location.href = "index.html"; // La ruta es relativa a tu ubicación
+        window.location.href = "Menuadmin.html"; // La ruta es relativa a tu ubicación
       }, 1000); // Redirige después de 1 segundo
     } else {
       // Si las credenciales no son correctas
