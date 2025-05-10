@@ -575,9 +575,9 @@ body {
 .formulario-cliente textarea,
 .formulario-cliente select {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border-radius: 8px;
+    padding: 8px 6px; 
+    margin-bottom: 15px;
+    border-radius: 15px;
     border: 1px solid #ccc;
 }
 

@@ -25,6 +25,68 @@
   font-family: Arial, sans-serif;
 }
 
+.contenedor-modal--datos-cliente {
+  background-color: #111;
+  color: #fff;
+  margin: 5% auto;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 40%;
+  max-width: 900px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  animation: aparecer 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.contenedor-modal--datos-cliente h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+
+.detalle-producto h2 {
+  font-size: 2rem;
+
+}
+
+.contenedor-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.contenedor-formulario label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.contenedor-formulario textarea {
+  resize: none;
+}
+
+.contenedor-input--comprobante {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 20px;
+  height: 25px;
+  width: 25px;
+  background-image: url('./images/subir-archivo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.contenedor-input--comprobante input {
+  visibility: hidden;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  margin: 0;
+
+}
+
+
 /* Botón cerrar */
 .cerrar {
   margin-top: -2%;
@@ -35,6 +97,11 @@
 }
 .cerrar:hover {
   color: #fff;
+}
+
+
+.ventanaDatosCliente {
+  margin: 0.5vh auto;
 }
 
 /* Animación para cuando sale la ventana */
@@ -69,7 +136,6 @@
 
 /* Descripción */
 .descripcion {
-  margin-top: 4%;
   flex: 1;
   color: #fff;
 }
@@ -132,4 +198,11 @@
   border-radius: 6px;
   background-color: white;
   padding: 4px;
+}
+
+@media (max-width: 1024px) {
+
+  .contenedor-modal--datos-cliente { 
+    width: 60%;
+  }
 }
