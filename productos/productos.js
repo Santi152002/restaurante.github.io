@@ -48,4 +48,3 @@ tabInputs.forEach(function(input){
     })
     
 });
-
