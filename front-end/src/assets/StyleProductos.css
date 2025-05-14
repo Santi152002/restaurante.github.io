@@ -582,8 +582,8 @@ body {
 }
 
 .BotonPedido {
-    background-color: #ff5a00;
-    color: white;
+    background-color: yellow;
+    color: black;
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -591,7 +591,8 @@ body {
 }
 
 .BotonPedido:hover {
-    background-color: #e94e00;
+    background-color: black;
+    color: white;
 }
 
 #metodoTransferencia select {
@@ -685,8 +686,10 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
+    
 }
 
 .btn-modal:hover {
     background-color: #f2c600;
+    
 }
