@@ -7,22 +7,21 @@ document.getElementById("boton-carrito").addEventListener("click", () => {
   renderizarCarrito();
 });
 
-//cerrar panel
+// Cerrar panel carrito
 function cerrarCarrito() {
   document.getElementById("carritoPanel").classList.remove("mostrar");
 }
 
-//agrega producto al carrito
+// Agrega producto al carrito
 function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
   const cantidad = parseInt(document.getElementById(idCantidad).textContent);
-  const existente = carrito.find((item) => item.nombre === nombre); //por si ya existe en el carrito
+  const existente = carrito.find((item) => item.nombre === nombre); // por si ya existe en el carrito
 
   if (existente) {
-    existente.cantidad += cantidad; //si existe se le suma cantidad al carrito
-    existente.total += cantidad * precio; //si se va cambiando el precio
+    existente.cantidad += cantidad; // si existe se le suma cantidad al carrito
+    existente.total += cantidad * precio; // si se va cambiando el precio
   } else {
     carrito.push({
-      //si no pues lo agrega
       nombre,
       cantidad,
       precio,
@@ -32,7 +31,7 @@ function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
     });
   }
 
-  total += cantidad * precio; //aca va cambiando el precio final
+  total += cantidad * precio; // va cambiando el precio final
   guardarCarrito();
 }
 
@@ -54,18 +53,20 @@ function renderizarCarrito() {
   carrito.forEach((item, index) => {
     const div = document.createElement("div");
     div.classList.add("item-carrito");
-    //contenido del carrito
     div.innerHTML = ` 
-      <img src="${item.imagen}" class="imagen-carrito"/>
-      <div class="info-carrito">
-        <strong>${item.nombre}</strong>
-        <p>${item.descripcion}</p>
-        <p>Precio: $${item.precio}</p>
+      <div class="tarjeta-carrito">
+        <button class="boton-x" onclick="eliminarProducto(${index})">x</button>
+        <div class="contenido-izquierda">
+          <img src="${item.imagen}" class="imagen-carrito" />
+          <div class="contenido-carrito">
+            <strong>${item.nombre}</strong>
+            <p>$${item.precio}</p>
+          </div>
+        </div>
         <div class="cantidad-controles">
-          <button onclick="cambiarCantidad(${index}, -1)">-</button>
-          <span>${item.cantidad}</span>
           <button onclick="cambiarCantidad(${index}, 1)">+</button>
-          <button onclick="eliminarProducto(${index})" class="eliminar">Eliminar</button>
+          <span class="contador">${item.cantidad}</span>
+          <button onclick="cambiarCantidad(${index}, -1)">-</button>
         </div>
       </div>
     `;
@@ -92,7 +93,6 @@ function eliminarProducto(index) {
   carrito.splice(index, 1);
   guardarCarrito();
 }
-
 function realizarPedido() {
   if (carrito.length === 0) {
     alert("Tu carrito está vacío.");
@@ -105,6 +105,7 @@ function realizarPedido() {
   guardarCarrito();
 }
 
+// Cuando carga la página
 window.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
   actualizarContador();

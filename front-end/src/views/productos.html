@@ -29,10 +29,18 @@
   <body>
     <header>
       <div class="menu container">
-        <img class="logo-1" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
+        <img
+          class="logo-1"
+          src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+          alt=""
+        />
         <input type="checkbox" id="menu" />
         <label for="menu">
-          <img src="/front-end/public/imagesProductos/menu.png" class="menu-icono" alt="" />
+          <img
+            src="/front-end/public/imagesProductos/menu.png"
+            class="menu-icono"
+            alt=""
+          />
         </label>
 
         <!-- barra de navegacion -->
@@ -45,17 +53,20 @@
             </ul>
           </div>
 
-          <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
+          <img
+            class="logo-2"
+            src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+            alt=""
+          />
 
           <div class="menu-2">
             <div class="socials">
               <a target="_blank">
                 <div class="social">
-                  <i
-                    style="margin-left: 16%; font-size: 24px; color: white"
-                    class="bi bi-cart2"
-                    id="boton-carrito"
-                  ></i>
+                  <button id="boton-carrito" class="carrito-btn">
+                    <i class="bi bi-cart2"></i>
+                    <span id="contador-carrito">0</span>
+                  </button>
                 </div>
               </a>
               <a href="https://www.facebook.com/" target="_blank">
@@ -80,9 +91,6 @@
 
       <!--aca va a ir la lista despegable del carrito -->
       <!-- Botón de carrito -->
-      <button id="boton-carrito">
-        🛒 <span id="contador-carrito">0</span>
-      </button>
 
       <!-- Panel lateral del carrito -->
       <div id="carritoPanel">
@@ -96,19 +104,22 @@
       </div>
 
       <!-- Panel deslizable del carrito -->
-      <div id="carritoPanel" class="carrito-panel">
-        <div class="carrito-header">
-          <h3>Tu carrito de comida</h3>
-          <span class="cerrar-carrito" onclick="cerrarCarrito()">&times;</span>
-        </div>
-        <div class="carrito-body">
-          <div id="lista-carrito"></div>
-          <hr />
-          <p><strong>Subtotal:</strong> $<span id="totalCarrito">0</span></p>
-          <button class="BotonPedido" onclick="realizarPedido()">
-            Realizar pedido
-          </button>
-        </div>
+
+      <!-- Panel lateral del carrito -->
+      <div id="carritoPanel">
+        <button class="cerrar-btn" onclick="cerrarCarrito()">✖</button>
+        <h2>Tu Carrito</h2>
+        <div id="lista-carrito"></div>
+        <p class="total">
+          <strong>Total: $<span id="totalCarrito">0.00</span></strong>
+        </p>
+        <button
+          class="BotonPedido"
+          style="background-color: black"
+          onclick="realizarPedido()"
+        >
+          Realizar Pedido
+        </button>
       </div>
 
       <!--ACA VA LOS DATOS PERSONALES DEL CLIENTE AL MOMENTO DE REALIZAR EL PAGO-->
@@ -281,7 +292,10 @@
                           Hamburguesa
                         </h2>
                         <div class="contenido-producto">
-                          <img src="/front-end/public/imagesProductos/food1.png" alt="" />
+                          <img
+                            src="/front-end/public/imagesProductos/food1.png"
+                            alt=""
+                          />
                           <div class="descripcion">
                             <p>
                               Disfruta de nuestra jugosa hamburguesa preparada
@@ -336,7 +350,10 @@
                   </div>
                 </div>
                 <div class="slider-img">
-                  <img src="/front-end/public/imagesProductos/slider1.png" alt="" />
+                  <img
+                    src="/front-end/public/imagesProductos/slider1.png"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -368,7 +385,10 @@
                           Sandwich
                         </h2>
                         <div class="contenido-producto">
-                          <img src="/front-end/public/imagesProductos/slider2.png" alt="" />
+                          <img
+                            src="/front-end/public/imagesProductos/slider2.png"
+                            alt=""
+                          />
                           <div class="descripcion">
                             <p>
                               Ingredientes de calidad, pan artesanal y
@@ -417,7 +437,10 @@
                 </div>
 
                 <div class="slider-img">
-                  <img src="/front-end/public/imagesProductos/slider2.png" alt="" />
+                  <img
+                    src="/front-end/public/imagesProductos/slider2.png"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -454,7 +477,10 @@
                           Hamburguesa Clásica
                         </h2>
                         <div class="contenido-producto">
-                          <img src="/front-end/public/imagesProductos/slider3.png" alt="" />
+                          <img
+                            src="/front-end/public/imagesProductos/slider3.png"
+                            alt=""
+                          />
                           <div class="descripcion">
                             <p>
                               Jugosa carne de res a la parrilla, acompañada de
@@ -507,7 +533,10 @@
                   </div>
                 </div>
                 <div class="slider-img">
-                  <img src="/front-end/public/imagesProductos/slider3.png" alt="" />
+                  <img
+                    src="/front-end/public/imagesProductos/slider3.png"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -537,7 +566,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food1.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food1.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>Hamburguesa</h4>
@@ -553,7 +585,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food2.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food2.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>sandwich clasico</h4>
@@ -569,7 +604,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food3.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food3.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>sandwich de pollo</h4>
@@ -603,7 +641,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food4.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food4.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>Burrito Naturalito</h4>
@@ -619,7 +660,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food5.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food5.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>Burrito Ranchero</h4>
@@ -636,7 +680,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food6.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food6.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>Burrito Costa Azul</h4>
@@ -670,7 +717,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food7.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food7.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>PolloVeg</h4>
@@ -685,7 +735,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food8.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food8.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>Chuzo de cerdo</h4>
@@ -698,7 +751,10 @@
                 <div class="product">
                   <div class="product-img">
                     <h4>Nuevo</h4>
-                    <img src="/front-end/public/imagesProductos/food9.png" alt="" />
+                    <img
+                      src="/front-end/public/imagesProductos/food9.png"
+                      alt=""
+                    />
                   </div>
                   <div class="product-txt">
                     <h4>Pizza Clásica</h4>
@@ -741,13 +797,21 @@
             <h2>Horario</h2>
             <div class="horario-txt"></div>
           </div>
-          <img src="/front-end/public/imagesProductos/Horario.png" alt="Horario" class="horario-img" />
+          <img
+            src="/front-end/public/imagesProductos/Horario.png"
+            alt="Horario"
+            class="horario-img"
+          />
         </div>
       </div>
     </section>
 
     <footer class="footer container">
-      <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
+      <img
+        class="logo-2"
+        src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+        alt=""
+      />
       <div class="links">
         <h4>Direccion</h4>
         <ul>
