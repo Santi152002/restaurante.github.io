@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carrito con Imagen</title>
+    <style>
+      #carritoPanel {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 300px;
+        background: #f9f9f9;
+      }
+      .item-carrito {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .item-carrito img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hamburguesa</h2>
+    <img
+      id="imgHamburguesa"
+      src="https://via.placeholder.com/100"
+      alt="Hamburguesa"
+    />
+    <div>
+      <button
+        onclick="agregarAlCarrito('Hamburguesa', 1, 12000, document.getElementById('imgHamburguesa').src)"
+      >
+        Agregar al carrito
+      </button>
+    </div>
+
+    <h3>Tu carrito:</h3>
+    <div id="carritoPanel"></div>
+
+    <script>
+      let carrito = [];
+
+      function agregarAlCarrito(nombre, cantidad, precio, imagen) {
+        console.log("Imagen recibida en agregarAlCarrito:", imagen);
+        const existente = carrito.find((item) => item.nombre === nombre);
+        if (existente) {
+          existente.cantidad += cantidad;
+          existente.total = existente.cantidad * existente.precio;
+        } else {
+          carrito.push({
+            nombre,
+            cantidad,
+            precio,
+            imagen,
+            total: cantidad * precio,
+          });
+        }
+        renderizarCarrito();
+      }
+
+      function renderizarCarrito() {
+        const contenedor = document.getElementById("carritoPanel");
+        contenedor.innerHTML = "";
+
+        carrito.forEach((item) => {
+          console.log("Imagen en renderizarCarrito:", item.imagen);
+          const div = document.createElement("div");
+          div.className = "item-carrito";
+          div.innerHTML = `
+        <img src="${item.imagen}" alt="${item.nombre}" />
+        <div>
+          <strong>${item.nombre}</strong><br/>
+          Cantidad: ${item.cantidad}<br/>
+          Precio: $${item.precio}<br/>
+          Total: $${item.total}
+        </div>
+      `;
+          contenedor.appendChild(div);
+        });
+      }
+    </script>
+  </body>
+</html>

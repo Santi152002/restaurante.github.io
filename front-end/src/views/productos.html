@@ -90,20 +90,6 @@
       </div>
 
       <!--aca va a ir la lista despegable del carrito -->
-      <!-- Botón de carrito -->
-
-      <!-- Panel lateral del carrito -->
-      <div id="carritoPanel">
-        <button class="cerrar-btn" onclick="cerrarCarrito()">✖</button>
-        <h2>Tu Carrito</h2>
-        <div id="lista-carrito"></div>
-        <p>
-          <strong>Total: $<span id="totalCarrito">0.00</span></strong>
-        </p>
-        <button onclick="realizarPedido()">Realizar Pedido</button>
-      </div>
-
-      <!-- Panel deslizable del carrito -->
 
       <!-- Panel lateral del carrito -->
       <div id="carritoPanel">
@@ -293,7 +279,8 @@
                         </h2>
                         <div class="contenido-producto">
                           <img
-                            src="/front-end/public/imagesProductos/food1.png"
+                            id="url"
+                            src="http://127.0.0.1:5500//front-end/public/imagesProductos/food1.png"
                             alt=""
                           />
                           <div class="descripcion">
@@ -337,7 +324,7 @@
                                 margin-top: 5%;
                               "
                               class="btn-1"
-                              onclick="agregarAlCarrito('hamburguesa', 'valorContadorHamburguesa', '12.000')"
+                              onclick="agregarAlCarrito('hamburguesa', 'valorContadorHamburguesa', 12000, document.getElementById('url').src)"
                               >agregar</a
                             >
                           </div>

@@ -14,7 +14,9 @@ function cerrarCarrito() {
 
 // Agrega producto al carrito
 function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
+  console.log("📦 Imagen enviada al carrito:", imagen);
   const cantidad = parseInt(document.getElementById(idCantidad).textContent);
+  console.log("Imagen enviada al carrito:", imagen); // 👈 Verifica que es válida
   const existente = carrito.find((item) => item.nombre === nombre); // por si ya existe en el carrito
 
   if (existente) {
@@ -37,6 +39,7 @@ function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
 
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
+  console.log(JSON.parse(localStorage.getItem("carrito")));
   renderizarCarrito();
   actualizarContador();
 }
@@ -51,6 +54,7 @@ function renderizarCarrito() {
   contenedor.innerHTML = "";
 
   carrito.forEach((item, index) => {
+    console.log("🖼️ Imagen en renderizarCarrito:", item.imagen);
     const div = document.createElement("div");
     div.classList.add("item-carrito");
     div.innerHTML = ` 
@@ -58,6 +62,7 @@ function renderizarCarrito() {
         <button class="boton-x" onclick="eliminarProducto(${index})">x</button>
         <div class="contenido-izquierda">
           <img src="${item.imagen}" class="imagen-carrito" />
+
           <div class="contenido-carrito">
             <strong>${item.nombre}</strong>
             <p>$${item.precio}</p>
@@ -85,7 +90,7 @@ function cambiarCantidad(index, cambio) {
   } else {
     carrito[index].total = carrito[index].precio * carrito[index].cantidad;
   }
-
+  console.log("Carrito actual:", carrito); // Verifica que el objeto tenga imagen
   guardarCarrito();
 }
 
