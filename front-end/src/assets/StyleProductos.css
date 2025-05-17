@@ -697,3 +697,22 @@ body {
     background-color: #f2c600;
 
 }
+
+.botonDeCompraMenu {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: black;
+    border: 2px solid yellow;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    border-radius: 50px;
+}
+
+.botonDeCompraMenu:hover {
+    background-color: yellow;
+    color: #080202;
+}
