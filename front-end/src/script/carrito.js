@@ -14,9 +14,9 @@ function cerrarCarrito() {
 
 // Agrega producto al carrito
 function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
-  console.log("📦 Imagen enviada al carrito:", imagen);
+  /*  console.log("📦 Imagen enviada al carrito:", imagen); */
   const cantidad = parseInt(document.getElementById(idCantidad).textContent);
-  console.log("Imagen enviada al carrito:", imagen); // 👈 Verifica que es válida
+  /*   console.log("Imagen enviada al carrito:", imagen); */ // 👈 Verifica que es válida
   const existente = carrito.find((item) => item.nombre === nombre); // por si ya existe en el carrito
 
   if (existente) {
@@ -54,7 +54,7 @@ function renderizarCarrito() {
   contenedor.innerHTML = "";
 
   carrito.forEach((item, index) => {
-    console.log("🖼️ Imagen en renderizarCarrito:", item.imagen);
+    /* console.log("🖼️ Imagen en renderizarCarrito:", item.imagen); */
     const div = document.createElement("div");
     div.classList.add("item-carrito");
     div.innerHTML = ` 
@@ -90,7 +90,7 @@ function cambiarCantidad(index, cambio) {
   } else {
     carrito[index].total = carrito[index].precio * carrito[index].cantidad;
   }
-  console.log("Carrito actual:", carrito); // Verifica que el objeto tenga imagen
+  /*   console.log("Carrito actual:", carrito); // Verifica que el objeto tenga imagen */
   guardarCarrito();
 }
 
@@ -98,18 +98,23 @@ function eliminarProducto(index) {
   carrito.splice(index, 1);
   guardarCarrito();
 }
-function realizarPedido() {
-  if (carrito.length === 0) {
-    alert("Tu carrito está vacío.");
-    return;
-  }
 
-  alert("¡Pedido realizado!");
-  carrito = [];
-  total = 0;
-  guardarCarrito();
+//PARA MOSTRAR FORMULARIO DATOS DEL CLIENTE
+function mostrarFormularioPedido() {
+  if (carrito.length === 0) {
+    // Mostrar modal en vez de alert
+    document.getElementById("modalCarritoVacio").style.display = "flex";
+    return;
+  } else {
+    document.getElementById("carritoPanel").classList.remove("mostrar");
+    document.getElementById("ventanaDatosCliente").style.display = "block";
+  }
 }
 
+//CIERRA EL MODAL DEL CARRITO VACIO
+function cerrarModalCarrito() {
+  document.getElementById("modalCarritoVacio").style.display = "none";
+}
 // Cuando carga la página
 window.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();

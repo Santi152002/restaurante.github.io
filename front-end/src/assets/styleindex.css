@@ -109,11 +109,12 @@ body {
     text-transform: uppercase;
     font-weight: 800;
 }
- 
+
 .slider-txt p {
     font-size: 18px;
     color: white;
 }
+
 /* HASTA ACA VA LA INFORMACION DE BIENVENIDA */
 
 /* BOTON DE VER PRODUCTOS */
@@ -133,7 +134,8 @@ body {
     background-color: yellow;
     color: #080202;
 }
-/* HASTA ACA VA EL BOTON DE PRODUCTOS */ 
+
+/* HASTA ACA VA EL BOTON DE PRODUCTOS */
 
 .slider-img img {
     margin-right: 225px;
@@ -144,7 +146,7 @@ body {
     filter: grayscale(100%) invert(92%) contrast(93%);
 }
 
-/* FOOTER */ 
+/* FOOTER */
 
 .footer {
     padding: 100px 0px;
@@ -165,21 +167,25 @@ body {
     display: inline-block;
 }
 
-/* HASTA ACA VA EL FOOTER */ 
+/* HASTA ACA VA EL FOOTER */
 
 /* Asegúrate de que el contenedor padre ocupe toda la altura y use flexbox */
 .info {
     display: flex;
-    justify-content: center;     /* Centra horizontalmente */
-    align-items: center;         /* Centra verticalmente */
-    height: 50vh;               /* Ocupa toda la altura de la pantalla */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 50vh;
+    /* Ocupa toda la altura de la pantalla */
     padding: 0 20px;
     box-sizing: border-box;
 }
 
 /* Imagen puede ir oculta o posicionada dependiendo del diseño */
 .info-img {
-    display: none; /* O ajusta esto si quieres mostrar la imagen */
+    display: none;
+    /* O ajusta esto si quieres mostrar la imagen */
 }
 
 .info-txt {
@@ -206,7 +212,6 @@ button {
     background-color: black;
     border: none;
     padding: 10px;
-    border-radius: 8px; /* opcional para bordes redondeados */
-  }
-  
-  
+    border-radius: 8px;
+    /* opcional para bordes redondeados */
+}

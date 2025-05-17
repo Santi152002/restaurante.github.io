@@ -102,7 +102,7 @@
         <button
           class="BotonPedido"
           style="background-color: black"
-          onclick="realizarPedido()"
+          onclick="mostrarFormularioPedido()"
         >
           Realizar Pedido
         </button>
@@ -131,7 +131,7 @@
           <form
             id="formularioPedido"
             class="formulario-cliente"
-            onsubmit="enviarPedido(event)"
+            onsubmit="enviarFormularioPedido(event)"
           >
             <div class="contenedor-formulario">
               <label>Nombre:</label>
@@ -279,8 +279,8 @@
                         </h2>
                         <div class="contenido-producto">
                           <img
-                            id="url"
-                            src="http://127.0.0.1:5500//front-end/public/imagesProductos/food1.png"
+                            id="urlH"
+                            src="/front-end/public/imagesProductos/slider1.png"
                             alt=""
                           />
                           <div class="descripcion">
@@ -324,7 +324,7 @@
                                 margin-top: 5%;
                               "
                               class="btn-1"
-                              onclick="agregarAlCarrito('hamburguesa', 'valorContadorHamburguesa', 12000, document.getElementById('url').src)"
+                              onclick="agregarAlCarrito('hamburguesa', 'valorContadorHamburguesa', 12000, document.getElementById('urlH').src)"
                               >agregar</a
                             >
                           </div>
@@ -373,6 +373,7 @@
                         </h2>
                         <div class="contenido-producto">
                           <img
+                          id="urlS"
                             src="/front-end/public/imagesProductos/slider2.png"
                             alt=""
                           />
@@ -410,7 +411,7 @@
                                 margin-top: 5%;
                               "
                               class="btn-1"
-                              onclick="agregarAlCarrito('Sandwich', 'valorContadorSandwich', '15.000')"
+                              onclick="agregarAlCarrito('Sandwich', 'valorContadorSandwich', 15000, document.getElementById('urlS').src)"
                               >agregar</a
                             >
                           </div>
@@ -465,6 +466,8 @@
                         </h2>
                         <div class="contenido-producto">
                           <img
+                          id="urlC"
+  
                             src="/front-end/public/imagesProductos/slider3.png"
                             alt=""
                           />
@@ -507,7 +510,7 @@
                                 margin-top: 5%;
                               "
                               class="btn-1"
-                              onclick="agregarAlCarrito('Hamburguesa Clasica', 'valorContadorClasica', '16.000')"
+                              onclick="agregarAlCarrito('Hamburguesa Clasica', 'valorContadorClasica', 16000, document.getElementById('urlC').src)"
                               >agregar</a
                             >
                           </div>
