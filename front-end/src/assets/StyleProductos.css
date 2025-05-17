@@ -81,14 +81,14 @@ body {
 }
 
 .social {
-    
+
 
     margin: 0 10px;
     height: 40px;
     width: 40px;
     border: 1px solid yellow;
     border-radius: 50%;
-    
+
 }
 
 .social:hover {
@@ -164,6 +164,7 @@ body {
     padding: 15px 35px;
     border: 2px solid yellow;
     color: #ffffff;
+    cursor: pointer;
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -337,39 +338,39 @@ body {
 .horario {
     padding: 100px 0px;
     background-color: #0d0d0d;
-  }
-  
-  .horario-info h2 {
+}
+
+.horario-info h2 {
     font-size: 75px;
     color: white;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 25px;
-  }
-  
-  .horario-txt p {
+}
+
+.horario-txt p {
     color: white;
     font-size: 20px;
     margin-bottom: 10px;
-  }
-  
-  .horario-contenido {
+}
+
+.horario-contenido {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .horario-texto {
+}
+
+.horario-texto {
     max-width: 50%;
-  }
-  
-  .horario-img {
+}
+
+.horario-img {
     max-width: 400px;
     width: 100%;
     height: auto;
     object-fit: contain;
-  }
-  
+}
+
 
 .txt {
     color: white;
@@ -578,7 +579,7 @@ body {
 .formulario-cliente textarea,
 .formulario-cliente select {
     width: 100%;
-    padding: 8px 6px; 
+    padding: 8px 6px;
     margin-bottom: 15px;
     border-radius: 15px;
     border: 1px solid #ccc;
@@ -649,8 +650,8 @@ body {
 .contenedor-boton {
     display: flex;
     justify-content: end;
-  }
-  
+}
+
 
 .modal-carrito-vacio {
     display: none;
@@ -689,10 +690,10 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
-    
+
 }
 
 .btn-modal:hover {
     background-color: #f2c600;
-    
+
 }

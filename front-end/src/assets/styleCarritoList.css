@@ -6,7 +6,7 @@
   width: 350px;
   height: 100vh;
   background-color: #f1ebeb;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
   transition: right 0.4s ease-in-out;
   z-index: 1000;
@@ -58,12 +58,14 @@
   border-radius: 50%;
   font-weight: bold;
   z-index: 10;
-  position: relative; /* Para posicionar el contador dentro */
-  overflow: hidden; /* Importante para evitar que algo se salga */
+  position: relative;
+  /* Para posicionar el contador dentro */
+  overflow: hidden;
+  /* Importante para evitar que algo se salga */
 }
 
 /* Contenedor general de la tarjeta */
-.tarjeta-carrito { 
+.tarjeta-carrito {
   position: relative;
   justify-content: space-between;
   background-color: #f1ebeb;
@@ -72,9 +74,12 @@
   padding: 16px;
   margin-bottom: 20px;
   box-sizing: border-box;
-  width: 100%;        /* ocupa todo el ancho posible del contenedor */
-  max-width: 300px;   /* pero no más de 300px */
-  height: 150px;      /* altura fija */
+  width: 100%;
+  /* ocupa todo el ancho posible del contenedor */
+  max-width: 300px;
+  /* pero no más de 300px */
+  height: 150px;
+  /* altura fija */
   display: flex;
   gap: 16px;
   overflow: hidden;
@@ -83,12 +88,14 @@
 .info-carrito strong,
 .info-carrito p {
   margin: 0;
-  white-space: nowrap;       /* texto en una sola línea */
+  white-space: nowrap;
+  /* texto en una sola línea */
   overflow: hidden;
-  text-overflow: ellipsis;   /* "..." si es muy largo */
+  text-overflow: ellipsis;
+  /* "..." si es muy largo */
 }
 
-.cantidad-controles{
+.cantidad-controles {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +103,7 @@
   gap: 8px;
 }
 
-.cantidad-controles button{
+.cantidad-controles button {
   background-color: transparent;
   border: none;
   font-size: 18px;
@@ -104,7 +111,7 @@
   color: #000;
 }
 
-.contador{
+.contador {
   background-color: #000;
   color: #f1ebeb;
   padding: 8px 14px;
@@ -115,7 +122,7 @@
   text-align: center;
 }
 
-.boton-x{
+.boton-x {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -129,17 +136,18 @@
 }
 
 .boton-x:hover {
-  color: #8d8989; /* Se oscurece al pasar el mouse */
+  color: #8d8989;
+  /* Se oscurece al pasar el mouse */
 }
 
-.contenido-izquierda{
- display: flex; 
-  align-items: center; 
-  gap: 12px; 
-  flex: 1; 
+.contenido-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
 }
 
-.imagen-carrito{
+.imagen-carrito {
   width: 60px;
   height: 60px;
   border-radius: 8px;
@@ -148,7 +156,8 @@
 
 .contenido-carrito {
   display: flex;
-  flex-direction: column; /* Apila nombre y precio uno debajo del otro */
+  flex-direction: column;
+  /* Apila nombre y precio uno debajo del otro */
   justify-content: center;
 }
 
@@ -187,5 +196,24 @@
 }
 
 .BotonPedido:hover {
-  background-color: #333;
+  background-color: #424242;
+}
+
+.BotonPedidoDatosDeCliente {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.BotonPedidoDatosDeCliente:hover {
+  background-color: yellow;
+  color: black;
 }
