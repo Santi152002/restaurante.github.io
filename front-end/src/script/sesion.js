@@ -2,15 +2,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   const inputs = document.querySelectorAll("input");
-  const usuarioInput = inputs[0]; // Primer input es usuario
-  const claveInput = inputs[1];   // Segundo input es contraseña
+  const usuarioInput = inputs[0];
+  const claveInput = inputs[1];
 
-  // Crear contenedor de mensaje dinámicamente
   let mensaje = document.createElement("p");
   form.appendChild(mensaje);
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevenir recarga
+    e.preventDefault();
 
     const usuario = usuarioInput.value;
     const clave = claveInput.value;
@@ -26,18 +25,28 @@ document.addEventListener("DOMContentLoaded", () => {
       (u) => u.usuario === usuario && u.clave === clave
     );
 
-    if (usuarioValido) {  
-      // Si las credenciales son correctas
+    if (usuarioValido) {
       mensaje.style.color = "green";
       mensaje.textContent = `Bienvenido/a, ${usuarioValido.usuario}!`;
 
-      // Redireccionar tras 1 segundo
       setTimeout(() => {
-        // Esta es la redirección al archivo 'index.html' dentro de la carpeta 'Administrador'
-        window.location.href = "Menuadmin.html"; // La ruta es relativa a tu ubicación
-      }, 1000); // Redirige después de 1 segundo
+        // Redireccionar según el usuario
+        switch (usuarioValido.usuario) {
+          case "admin":
+            window.location.href = "Menuadmin.html";
+            break;
+          case "santiago":
+            window.location.href = "/front-end/src/views/MenuEmpleado.html";
+            break;
+          case "valentina":
+            window.location.href = "/front-end/src/views/MenuEmpleado.html";
+            break;
+          case "marlon":
+            window.location.href = "/front-end/src/views/MenuEmpleado.html";
+            break;
+        }
+      }, 1000);
     } else {
-      // Si las credenciales no son correctas
       mensaje.style.color = "red";
       mensaje.textContent = "Usuario o contraseña incorrectos.";
     }
