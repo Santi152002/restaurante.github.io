@@ -193,7 +193,7 @@
                   satisfacer tu antojo! 🍟🥤
                 </p>
                 <br>
-                <p><strong>$21.500</strong></p>
+                <p class="price" style="font-size: 24px;"><strong>$21.500</strong></p>
                 <div class="botones">
                   <a class="btn-1" onclick="detalleProductoOpen('DetalleProductoHamburguesa')">Comprar</a>
 
@@ -219,7 +219,7 @@
                             satisfacer tu antojo! 🍟🥤
                           </p>
                           <br />
-                          <h4 class="price">$19.000</h4>
+                          <p class="price" style="font-size: 24px;"><strong>$21.500</strong></p>
                           <div class="contador">
                             <button class="Boton Boton-restar" onclick="negativo('valorContadorHamburguesa')">
                               -
@@ -235,7 +235,7 @@
                                 padding: 2% 5%;
                                 margin-top: 5%;
                               " class="btn-1"
-                            onclick="agregarAlCarrito('hamburguesa', 'valorContadorHamburguesa', 12000, document.getElementById('urlH').src)">agregar</a>
+                            onclick="agregarAlCarrito('hamburguesa', 'valorContadorHamburguesa', 21500, document.getElementById('urlH').src)">agregar</a>
                         </div>
                       </div>
                     </div>
@@ -248,7 +248,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="slider">
               <div class="slider-txt">
@@ -258,6 +257,8 @@
                   irresistibles. Elige tu favorito y disfrútalo en cada
                   bocado. 🥪🥪
                 </p>
+                <br>
+                <p class="price" style="font-size: 24px;"><strong>$10.000</strong></p>
                 <div class="botones">
                   <a onclick="detalleProductoOpen('DetalleProductoSandwich')" class="btn-1">Comprar</a>
                   <!-- ventanaDetalleProducto -->
@@ -276,6 +277,8 @@
                             combinaciones irresistibles. Elige tu favorito y
                             disfrútalo en cada bocado. 🥪🥪
                           </p>
+                          <br>
+                          <p class="price" style="font-size: 24px;"><strong>$10.000</strong></p>
                           <div class="contador">
                             <button class="Boton Boton-restar" onclick="negativo('valorContadorSandwich')">
                               -
@@ -283,15 +286,14 @@
                             <!--por defecto estara en 1 -->
                             <span class="valor" id="valorContadorSandwich" style="color: black">1</span>
                             <button class="Boton Boton-sumar" onclick="positivo('valorContadorSandwich')">
-                              +
-                            </button>
+                              + </button>
                           </div>
                           <a style="
                                 font-size: -5%;
                                 padding: 2% 5%;
                                 margin-top: 5%;
                               " class="btn-1"
-                            onclick="agregarAlCarrito('Sandwich', 'valorContadorSandwich', 15000, document.getElementById('urlS').src)">agregar</a>
+                            onclick="agregarAlCarrito('Sandwich', 'valorContadorSandwich', 10000, document.getElementById('urlS').src)">agregar</a>
                         </div>
                       </div>
                     </div>
@@ -319,6 +321,8 @@
                   frescura y textura. Ideal para satisfacer tu antojo en
                   cualquier momento del día.
                 </p>
+                <br>
+                <p class="price" style="font-size: 24px;"><strong>$16.000</strong></p>
                 <div class="botones">
                   <a onclick="detalleProductoOpen('DetalleProductoClasica')" class="btn-1">Comprar</a>
 
@@ -343,6 +347,8 @@
                             frescura y textura. Ideal para satisfacer tu
                             antojo en cualquier momento del día.
                           </p>
+                          <br>
+                          <p class="price" style="font-size: 24px;"><strong>$16.000</strong></p>
                           <div class="contador">
                             <button class="Boton Boton-restar" onclick="negativo('valorContadorClasica')">
                               -
@@ -588,9 +594,6 @@
         frescos y salsas especiales, todo entre pan suave y dorado. Un clásico
         irresistible para cualquier hora del día. 🥪🥪
       </p>
-      <p><strong>$13.900</strong></p>
-      <br>
-      <button class="botonDeCompraMenu">Comprar</button>
     </div>
   </section>
 

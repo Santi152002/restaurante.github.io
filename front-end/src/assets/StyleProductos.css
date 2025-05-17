@@ -40,7 +40,7 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #db241b;
+    background-color: #000000 !important;
 }
 
 .menu {
