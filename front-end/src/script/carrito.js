@@ -7,22 +7,23 @@ document.getElementById("boton-carrito").addEventListener("click", () => {
   renderizarCarrito();
 });
 
-//cerrar panel
+// Cerrar panel carrito
 function cerrarCarrito() {
   document.getElementById("carritoPanel").classList.remove("mostrar");
 }
 
-//agrega producto al carrito
+// Agrega producto al carrito
 function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
+  /*  console.log("📦 Imagen enviada al carrito:", imagen); */
   const cantidad = parseInt(document.getElementById(idCantidad).textContent);
-  const existente = carrito.find((item) => item.nombre === nombre); //por si ya existe en el carrito
+  /*   console.log("Imagen enviada al carrito:", imagen); */ // 👈 Verifica que es válida
+  const existente = carrito.find((item) => item.nombre === nombre); // por si ya existe en el carrito
 
   if (existente) {
-    existente.cantidad += cantidad; //si existe se le suma cantidad al carrito
-    existente.total += cantidad * precio; //si se va cambiando el precio
+    existente.cantidad += cantidad; // si existe se le suma cantidad al carrito
+    existente.total += cantidad * precio; // si se va cambiando el precio
   } else {
     carrito.push({
-      //si no pues lo agrega
       nombre,
       cantidad,
       precio,
@@ -32,12 +33,13 @@ function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
     });
   }
 
-  total += cantidad * precio; //aca va cambiando el precio final
+  total += cantidad * precio; // va cambiando el precio final
   guardarCarrito();
 }
 
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
+  console.log(JSON.parse(localStorage.getItem("carrito")));
   renderizarCarrito();
   actualizarContador();
 }
@@ -52,20 +54,24 @@ function renderizarCarrito() {
   contenedor.innerHTML = "";
 
   carrito.forEach((item, index) => {
+    /* console.log("🖼️ Imagen en renderizarCarrito:", item.imagen); */
     const div = document.createElement("div");
     div.classList.add("item-carrito");
-    //contenido del carrito
     div.innerHTML = ` 
-      <img src="${item.imagen}" class="imagen-carrito"/>
-      <div class="info-carrito">
-        <strong>${item.nombre}</strong>
-        <p>${item.descripcion}</p>
-        <p>Precio: $${item.precio}</p>
+      <div class="tarjeta-carrito">
+        <button class="boton-x" onclick="eliminarProducto(${index})">x</button>
+        <div class="contenido-izquierda">
+          <img src="${item.imagen}" class="imagen-carrito" />
+
+          <div class="contenido-carrito">
+            <strong>${item.nombre}</strong>
+            <p>$${item.precio}</p>
+          </div>
+        </div>
         <div class="cantidad-controles">
-          <button onclick="cambiarCantidad(${index}, -1)">-</button>
-          <span>${item.cantidad}</span>
           <button onclick="cambiarCantidad(${index}, 1)">+</button>
-          <button onclick="eliminarProducto(${index})" class="eliminar">Eliminar</button>
+          <span class="contador">${item.cantidad}</span>
+          <button onclick="cambiarCantidad(${index}, -1)">-</button>
         </div>
       </div>
     `;
@@ -84,7 +90,7 @@ function cambiarCantidad(index, cambio) {
   } else {
     carrito[index].total = carrito[index].precio * carrito[index].cantidad;
   }
-
+  /*   console.log("Carrito actual:", carrito); // Verifica que el objeto tenga imagen */
   guardarCarrito();
 }
 
@@ -93,18 +99,23 @@ function eliminarProducto(index) {
   guardarCarrito();
 }
 
-function realizarPedido() {
+//PARA MOSTRAR FORMULARIO DATOS DEL CLIENTE
+function mostrarFormularioPedido() {
   if (carrito.length === 0) {
-    alert("Tu carrito está vacío.");
+    // Mostrar modal en vez de alert
+    document.getElementById("modalCarritoVacio").style.display = "flex";
     return;
+  } else {
+    document.getElementById("carritoPanel").classList.remove("mostrar");
+    document.getElementById("ventanaDatosCliente").style.display = "block";
   }
-
-  alert("¡Pedido realizado!");
-  carrito = [];
-  total = 0;
-  guardarCarrito();
 }
 
+//CIERRA EL MODAL DEL CARRITO VACIO
+function cerrarModalCarrito() {
+  document.getElementById("modalCarritoVacio").style.display = "none";
+}
+// Cuando carga la página
 window.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
   actualizarContador();

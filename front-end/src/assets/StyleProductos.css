@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #080202;
+    background-color: #000000;
     font-family: "Poppins", sans-serif;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #db241b;
+    background-color: #000000 !important;
 }
 
 .menu {
@@ -81,11 +81,13 @@ body {
 }
 
 .social {
+
     margin: 0 10px;
     height: 40px;
     width: 40px;
     border: 1px solid yellow;
     border-radius: 50%;
+
 }
 
 .social:hover {
@@ -161,6 +163,7 @@ body {
     padding: 15px 35px;
     border: 2px solid yellow;
     color: #ffffff;
+    cursor: pointer;
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -180,10 +183,6 @@ body {
 .slider-img img {
     margin-right: 225px;
     width: 550px;
-}
-
-.products {
-    background-color: #0d0d0d;
 }
 
 .tabs {
@@ -227,22 +226,28 @@ body {
     display: block;
 }
 
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .product {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 25px;
     margin: 0 10px;
-
-}
-
-.product-img {
-    width: 50%;
-    text-align: left;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    text-align: center;
+    width: 300px;
+    height: 450px;
+    /* altura fija para todas las tarjetas */
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .product-img h4 {
     display: inline-block;
-    padding: 5px 7px;
+    padding: 5px 10px;
     line-height: 15px;
     color: white;
     font-size: 14px;
@@ -250,38 +255,72 @@ body {
     font-weight: 800;
     border: 2px solid yellow;
     border-radius: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 0, 0.1);
 }
 
 .product-img img {
     width: 150px;
     height: 120px;
-}
-
-.product-txt {
-    width: 50%;
-    margin-left: 10px;
-    text-align: left;
+    object-fit: contain;
+    margin-bottom: 15px;
 }
 
 .product-txt h4 {
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     text-transform: uppercase;
-    font-weight: 800;
-    margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .product-txt p {
     color: white;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.product-txt span {
-    color: white;
+.product-txt .price {
     font-size: 18px;
     font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.botonDeCompraMenu {
+    background-color: #ffb347;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.botonDeCompraMenu:hover {
+    background-color: #ffaa00;
+}
+
+/* Elimina el ancho en 50% que estaba dividiendo en dos columnas */
+.product-img,
+.product-txt {
+    width: 100%;
+}
+
+.botonDeCompraMenu {
+    background-color: #ffb347;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.botonDeCompraMenu:hover {
+    background-color: #ffaa00;
 }
 
 .info {
@@ -334,39 +373,38 @@ body {
 .horario {
     padding: 100px 0px;
     background-color: #0d0d0d;
-  }
-  
-  .horario-info h2 {
+}
+
+.horario-info h2 {
     font-size: 75px;
     color: white;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 25px;
-  }
-  
-  .horario-txt p {
+}
+
+.horario-txt p {
     color: white;
     font-size: 20px;
     margin-bottom: 10px;
-  }
-  
-  .horario-contenido {
+}
+
+.horario-contenido {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .horario-texto {
+}
+
+.horario-texto {
     max-width: 50%;
-  }
-  
-  .horario-img {
+}
+
+.horario-img {
     max-width: 400px;
     width: 100%;
     height: auto;
     object-fit: contain;
-  }
-  
+}
 
 .txt {
     color: white;
@@ -570,20 +608,19 @@ body {
 
 }
 
-
 .formulario-cliente input,
 .formulario-cliente textarea,
 .formulario-cliente select {
     width: 100%;
-    padding: 8px 6px; 
+    padding: 8px 6px;
     margin-bottom: 15px;
     border-radius: 15px;
     border: 1px solid #ccc;
 }
 
 .BotonPedido {
-    background-color: #ff5a00;
-    color: white;
+    background-color: yellow;
+    color: black;
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -591,13 +628,13 @@ body {
 }
 
 .BotonPedido:hover {
-    background-color: #e94e00;
+    background-color: black;
+    color: white;
 }
 
 #metodoTransferencia select {
     margin-top: 8px;
 }
-
 
 .modal-exito {
     display: none;
@@ -626,7 +663,6 @@ body {
     color: rgb(255, 255, 255);
 }
 
-
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -641,12 +677,10 @@ body {
 
 
 
-
 .contenedor-boton {
     display: flex;
     justify-content: end;
-  }
-  
+}
 
 .modal-carrito-vacio {
     display: none;
@@ -685,8 +719,29 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
+
 }
 
 .btn-modal:hover {
     background-color: #f2c600;
+
+}
+
+.botonDeCompraMenu {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: black;
+    border: 2px solid yellow;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    border-radius: 50px;
+}
+
+.botonDeCompraMenu:hover {
+    background-color: yellow;
+    color: #080202;
 }

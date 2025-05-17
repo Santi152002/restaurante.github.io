@@ -4,47 +4,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/front-end/public/imagesProductos/logoprincipal.jpeg" type="image/png">
+
   <title>Inicio | Raspidos y Sabrosos</title>
   <meta name="description"
     content="Descubre nuestras hamburguesas y sándwiches gourmet. Sabor, calidad y servicio excepcional. ¡Haz tu pedido ahora!" />
   <link rel="stylesheet" href="/front-end/src/assets/styleindex.css" />
-  <link rel="stylesheet" href="StyleVentanasFlotantes.css" />
+  <link rel="stylesheet" href="/front-end/src/assets/StyleVentanasFlotantes.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
   <header>
     <div class="menu container">
-      <img class="logo-1" src="images/logoprincipal.jpeg" alt="" />
+      <img class="logo-1" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
       <input type="checkbox" id="menu" />
-      <label for="menu">
-        <img src="images/menu.png" class="menu-icono" alt="" />
-      </label>
       <!-- barra de navegacion -->
       <nav class="navbar">
         <div class="menu-1">
           <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="../productos/productos.html">Productos</a></li>
+            <li><a href="../front-end/src/views/productos.html">Productos</a></li>
           </ul>
         </div>
-        <img class="logo-2" src="images/logoprincipal.jpeg" alt="" />
+        <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
         <div class="menu-2">
           <div class="socials">
             <a target="_blank"></a>
             <a href="https://www.facebook.com/" target="_blank">
               <div class="social">
-                <img src="images/s1.svg" alt="" />
+                <img src="/front-end/public/imagesProductos/s1.svg" alt="" />
               </div>
             </a>
             <a href="https://x.com/" target="_blank">
               <div class="social">
-                <img src="images/s2.svg" alt="" />
+                <img src="/front-end/public/imagesProductos/s2.svg" alt="" />
               </div>
             </a>
             <a href="https://www.instagram.com/" target="_blank">
               <div class="social">
-                <img src="images/s3.svg" alt="" />
+                <img src="/front-end/public/imagesProductos/s3.svg" alt="" />
               </div>
             </a>
           </div>
@@ -69,11 +68,12 @@
                 </p>
                 <br>
                 <div class="botones">
-                  <a href="../productos/productos.html" class="btn-1">Ver productos</a>
+                  <a href="/front-end/src/views/productos.html" class="btn-1">Ver productos</a>
                 </div>
               </div>
               <div class="slider-img">
-                <img src="images/portada.png" alt="Hamburguesa con papas y bebida en fondo oscuro" />
+                <img src="/front-end/public/imagesGlobal/portada.png"
+                  alt="Hamburguesa con papas y bebida en fondo oscuro" />
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
 
   <section class="info container">
     <div class="info-img">
-      <img src="images/info.png" alt="" />
+      <img src="/front-end/public/imagesProductos/info.png" alt="" />
     </div>
 
     <div class="info-txt">
@@ -98,15 +98,17 @@
     </div>
   </section>
 
-  <section>
-    <iframe class="map"
-      src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3341.901991496923!2d-75.50902257240172!3d5.069094112513046!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1744163537132!5m2!1ses!2sco"
-      width="100%" height="500" style="border: 0" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+
+
+  <iframe class="map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.212068847783!2d-75.51149934565969!3d5.069347175836588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e476500238da317%3A0x67aa03490ca5a3d0!2sFundadores!5e0!3m2!1ses-419!2sco!4v1747501863346!5m2!1ses-419!2sco"
+    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
   <footer class="footer container">
-    <a href="../admin/iniciosesion.html" target="_blank"><button id="">
-        <img class="logo-2" src="images/logoprincipal.jpeg" alt="" /></button></a>
+    <a href="/front-end/src/views/iniciosesion.html" target="_blank"><button id="">
+        <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" /></button></a>
 
     <div class="links">
       <h4>Direccion</h4>
@@ -136,25 +138,25 @@
       <div class="socials">
         <a href="https://www.facebook.com/" target="_blank">
           <div class="social">
-            <img src="images/s1.svg" alt="" />
+            <img src="/front-end/public/imagesProductos/s1.svg" alt="" />
           </div>
         </a>
         <a href="https://x.com/" target="_blank">
           <div class="social">
-            <img src="images/s2.svg" alt="" />
+            <img src="/front-end/public/imagesProductos/s2.svg" alt="" />
           </div>
         </a>
         <a href="https://www.instagram.com/" target="_blank">
           <div class="social">
-            <img src="images/s3.svg" alt="" />
+            <img src="/front-end/public/imagesProductos/s3.svg" alt="" />
           </div>
         </a>
       </div>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="productos.js"></script>
-  <script src="ventanas.js"></script>
+  <script src="/front-end/src/script/productos.js"></script>
+  <script src="/front-end/src/script/ventanas.js"></script>
 </body>
 
 </html>
