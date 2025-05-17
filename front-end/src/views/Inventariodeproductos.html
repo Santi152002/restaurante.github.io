@@ -1,0 +1,144 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="/front-end/src/assets/Inventariodeproductos.css">
+
+  </head>
+  <body>
+    <header>
+  <div class="menu container">
+    <img class="logo-1" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="Logo"/>
+    <input type="checkbox" id="menu" />
+    <nav class="navbar">
+      <img class="logo-2" src="/front-end/public/imagesGlobal/logoprincipal.jpeg" alt="Logo"/>
+      <div class="menu-1">
+        <ul>
+          <li><a href="/front-end/index.html">INICIO</a></li>
+          <li><a href="/front-end/src/views/Menuadmin.html">ADMINISTRACION DE EMPLEADOS</a></li>
+          <li><a href="#">INVENTARIO DE PRODUCTOS</a></li>
+          <li><a href="#">PEDIDOS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<h3 class="titulo">INVENTARIO DE PRODUCTOS</h3>
+
+<!-- Botones de menú -->
+<div class="opcionesmenu1">
+  <div class="empleados">
+    <li><a href="#" class="abrirModalCrear">GESTIONAR PRODUCTOS DISPONIBLES</a></li>
+  </div>
+</div>
+<div class="opcionesmenu1">
+  <div class="empleados">
+    <li><a href="#" class="abrirModalGestion">GESTIONAR CANTIDAD DE PRODUCTOS DISPONIBLES</a></li>
+  </div>
+</div>
+<div class="opcionesmenu1">
+  <div class="empleados">
+    <li><a href="#" class="abrirModalinfo">GESTIÓN DE INFORMACIÓN DE PRODUCTOS</a></li>
+  </div>
+</div>
+
+<!-- MODAL PRINCIPAL -->
+<div id="modalCrear" class="modal" style="display: none;">
+  <div class="modal-contenido" id="contenedorModalproductos">
+    <span class="cerrar" id="cerrarModalCrear">&times;</span>
+    <h2>Gestión de Productos Disponibles</h2>
+
+    <div class="producto">
+      <label class="nombre-producto">Hamburguesa</label>
+      <div class="disponibilidad">
+        <span>¿Producto disponible?</span>
+        <button class="btn-si">Sí</button>
+        <button class="btn-no">No</button>
+      </div>
+    </div>
+
+    <div class="producto">
+      <label class="nombre-producto">Perro</label>
+      <div class="disponibilidad">
+        <span>¿Producto disponible?</span>
+        <button class="btn-si">Sí</button>
+        <button class="btn-no">No</button>
+      </div>
+    </div>
+
+    <div class="producto">
+      <label class="nombre-producto">Burrito</label>
+      <div class="disponibilidad">
+        <span>¿Producto disponible?</span>
+        <button class="btn-si">Sí</button>
+        <button class="btn-no">No</button>
+      </div>
+    </div>
+
+    <div class="producto">
+      <label class="nombre-producto">Pizza</label>
+      <div class="disponibilidad">
+        <span>¿Producto disponible?</span>
+        <button class="btn-si">Sí</button>
+        <button class="btn-no">No</button>
+      </div>
+    </div>
+
+    <!-- Botones finales del modal principal -->
+    <div class="contenedor-botones">
+      <button id="btnAgregarProducto" class="btn-agregar">Agregar nuevo producto</button>
+      <button id="btnGuardarDisponibilidad" class="btn-guardar">Guardar</button>
+    </div>
+
+    
+  </div>
+</div>
+
+<!-- MODAL AGREGAR NUEVO PRODUCTO -->
+<div id="modalAgregarProducto" class="modal" style="display: none;">
+  <div class="modal-contenido">
+    <span class="cerrar" id="cerrarModalAgregar">&times;</span>
+    <h2>Agregar Nuevo Producto</h2>
+    <form id="formNuevoProducto">
+      <label for="nombreProducto">Nombre del producto:</label>
+      <input type="text" id="nombreProducto" name="nombreProducto" required/>
+
+      <label for="imagenProducto">Imagen del producto:</label>
+      <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*" required/>
+
+      <label for="infoProducto">Información del producto:</label>
+      <textarea id="infoProducto" name="infoProducto" required></textarea>
+
+      <label for="precioProducto">Precio:</label>
+      <input type="number" id="precioProducto" name="precioProducto" step="0.01" required/>
+
+      <button type="submit" class="btn-guardar">Guardar producto</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal de notificación -->
+<div id="modalNotificacion" class="modal-notificacion">
+  <div class="modal-contenido-notificacion">
+    <span id="cerrarNotificacion" class="cerrar-notificacion">&times;</span>
+    <p id="mensajeNotificacion">¡Guardado con éxito!</p>
+  </div>
+</div>
+
+<!-- Modal de notificación -->
+<div id="modalNotificacion" class="modal-notificacion">
+  <div class="modal-contenido-notificacion">
+    <span id="cerrarNotificacion" class="cerrar-notificacion">&times;</span>
+    <p id="mensajeNotificacion">¡Guardado con éxito!</p>
+    <button id="btnAceptarNotificacion" class="btn-aceptar-notificacion">Aceptar</button>
+  </div>
+</div>
+
+<script src="/front-end/src/script/Inventariodeproductos.js"></script>
+</body>
+</html>
+  </body>
+  </html>
