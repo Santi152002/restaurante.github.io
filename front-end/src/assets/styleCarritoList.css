@@ -38,8 +38,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 5px;
 }
+
 
 .carrito-btn i {
   font-size: 24px;
