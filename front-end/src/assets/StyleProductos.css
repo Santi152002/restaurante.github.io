@@ -81,13 +81,11 @@ body {
 }
 
 .social {
-
     margin: 0 10px;
     height: 40px;
     width: 40px;
     border: 1px solid yellow;
     border-radius: 50%;
-
 }
 
 .social:hover {
@@ -202,7 +200,7 @@ body {
     font-weight: 700;
     font-size: 18px;
     text-transform: uppercase;
-    transition: background ease 0.2;
+    transition: background ease 0.2s;
 }
 
 .tabs .tab {
@@ -217,12 +215,12 @@ body {
     display: none;
 }
 
-.tabs input[type="radio"]:checked+label {
+.tabs input[type="radio"]:checked + label {
     border-bottom: 2px solid yellow;
     color: white;
 }
 
-.tabs input[type="radio"]:checked+label+.tab {
+.tabs input[type="radio"]:checked + label + .tab {
     display: block;
 }
 
@@ -302,25 +300,9 @@ body {
     background-color: #ffaa00;
 }
 
-/* Elimina el ancho en 50% que estaba dividiendo en dos columnas */
 .product-img,
 .product-txt {
     width: 100%;
-}
-
-.botonDeCompraMenu {
-    background-color: #ffb347;
-    color: black;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.botonDeCompraMenu:hover {
-    background-color: #ffaa00;
 }
 
 .info {
@@ -336,6 +318,7 @@ body {
 .info-img img {
     width: 500px;
     height: 250px;
+    object-fit: contain;
 }
 
 .info-txt {
@@ -446,7 +429,8 @@ body {
     display: inline-block;
 }
 
-@media(max-width: 991px) {
+/* ======= Media Query para tablets y dispositivos medianos ======= */
+@media (max-width: 991px) {
     .menu {
         padding: 20px;
         justify-content: space-between;
@@ -475,14 +459,15 @@ body {
         right: 0;
         background-color: #181818;
         display: none;
+        flex-direction: column;
     }
 
     .menu .navbar ul li {
         width: 100%;
     }
 
-    #menu:checked~.navbar {
-        display: initial;
+    #menu:checked ~ .navbar {
+        display: flex;
     }
 
     .header-content {
@@ -522,9 +507,10 @@ body {
     .slider-img img {
         margin-right: 0px;
         width: 300px;
+        height: auto;
     }
 
-    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-horizontal > .swiper-pagination-bullets,
     .swiper-pagination-bullets,
     .swiper-pagination-horizontal,
     .swiper-pagination-custom,
@@ -554,6 +540,8 @@ body {
         width: 400px;
         height: 200px;
         margin-bottom: 25px;
+        max-width: 100%;
+        height: auto;
     }
 
     .info-txt {
@@ -587,13 +575,29 @@ body {
         flex-direction: column;
     }
 
+    .horario-contenido {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .horario-texto {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .horario-img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+    }
+
     .socials {
         justify-content: center;
     }
 
     .social img {
         margin: 8px 0 0 0;
-
     }
 
     .footer {
@@ -606,8 +610,151 @@ body {
         margin: 25px 0px 10px 0px;
     }
 
+    .product {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .product-img img {
+        width: 120px;
+        height: auto;
+    }
+
+    .product-txt h4 {
+        font-size: 18px;
+    }
+
+    .product-txt p {
+        font-size: 14px;
+    }
+
+    .product-txt .price {
+        font-size: 16px;
+    }
+
+    .botonDeCompraMenu {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin-right: 10px;
+    }
 }
 
+/* ======= Media Query para celulares pequeños ======= */
+@media (max-width: 600px) {
+    .menu {
+        padding: 10px;
+    }
+
+    .slider-txt h1 {
+        font-size: 30px;
+    }
+
+    .slider-txt p {
+        font-size: 14px;
+    }
+
+    .btn-1 {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+
+    .slider-img img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .tabs label {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .info-img img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .info-txt h2 {
+        font-size: 30px;
+    }
+
+    .info-txt p {
+        font-size: 14px;
+    }
+
+    .horario-info h2 {
+        font-size: 30px;
+    }
+
+    .horario-txt p {
+        font-size: 16px;
+    }
+
+    .horario-contenido {
+        flex-direction: column;
+    }
+
+    .horario-texto {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .horario-img {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+
+    .links h4 {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
+    .links ul li a {
+        font-size: 14px;
+    }
+
+    .product {
+        width: 95%;
+        max-width: 300px;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .product-img img {
+        width: 100px;
+        height: auto;
+    }
+
+    .product-txt h4 {
+        font-size: 16px;
+    }
+
+    .product-txt p {
+        font-size: 14px;
+    }
+
+    .product-txt .price {
+        font-size: 14px;
+    }
+
+    .botonDeCompraMenu {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin-right: 0;
+    }
+}
+
+/* ===== Estilos para formularios, botones y modales (global) ===== */
 .formulario-cliente input,
 .formulario-cliente textarea,
 .formulario-cliente select {
@@ -675,8 +822,6 @@ body {
     }
 }
 
-
-
 .contenedor-boton {
     display: flex;
     justify-content: end;
@@ -719,12 +864,10 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
-
 }
 
 .btn-modal:hover {
     background-color: #f2c600;
-
 }
 
 .botonDeCompraMenu {
@@ -744,4 +887,8 @@ body {
 .botonDeCompraMenu:hover {
     background-color: yellow;
     color: #080202;
+}
+
+.botonDeCompraMenu:last-child {
+    margin-right: 0;
 }

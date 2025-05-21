@@ -1,217 +1,262 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
-    background-color: #080202;
-    font-family: "Poppins", sans-serif;
+  background-color: #080202;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-/* barra principal */
+/* Barra principal */
 .menu {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .navbar {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .menu-1 {
-    margin-right: 180px;
-    margin-top: 5%;
+  margin-right: 180px;
+  margin-top: 5%;
 }
 
 .menu-2 {
-    margin-left: 180px;
-    display: flex;
-    align-items: center;
+  margin-left: 180px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo-1 {
-    width: 0;
+  width: 0;
 }
 
 .logo-2 {
-    width: 150px;
+  width: 150px;
 }
 
 .socials {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .social {
-    margin: 0 10px;
-    height: 40px;
-    width: 40px;
-    border: 1px solid yellow;
-    border-radius: 50%;
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid yellow;
+  border-radius: 50%;
 }
 
 .social:hover {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 .social img {
-    margin: 8px 0 0 10px;
+  margin: 8px 0 0 10px;
 }
 
 .menu .navbar ul li {
-    position: relative;
-    float: left;
+  float: left;
 }
 
 .menu .navbar ul li a {
-    font-size: 18px;
-    padding: 20px;
-    color: #ffffff;
-    display: block;
+  font-size: 18px;
+  padding: 20px;
+  color: #ffffff;
+  display: block;
 }
 
 .menu .navbar ul li a:hover {
-    color: yellow;
+  color: yellow;
 }
 
 #menu {
-    display: none;
+  display: none;
 }
 
-/* hasta aca llega la barra principal */
-
+/* Encabezado */
 .header-content {
-    margin-top: 200px;
-    padding-bottom: 50px;
+  margin-top: 200px;
+  padding-bottom: 50px;
 }
 
 .slider {
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-/* INFORMACION DE BIENVENIDA */
+.slider-txt {
+  flex: 1;
+  padding: 20px;
+}
+
 .slider-txt h1 {
-    font-size: 70px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 800;
+  font-size: 70px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .slider-txt p {
-    font-size: 18px;
-    color: white;
+  font-size: 18px;
+  color: white;
 }
 
-/* HASTA ACA VA LA INFORMACION DE BIENVENIDA */
-
-/* BOTON DE VER PRODUCTOS */
+/* Botón */
 .btn-1 {
-    display: inline-block;
-    padding: 15px 35px;
-    border: 2px solid yellow;
-    color: #ffffff;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-right: 20px;
-    border-radius: 50px;
+  display: inline-block;
+  padding: 15px 35px;
+  border: 2px solid yellow;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 20px;
+  border-radius: 50px;
 }
 
 .btn-1:hover {
-    background-color: yellow;
-    color: #080202;
+  background-color: yellow;
+  color: #080202;
 }
 
-/* HASTA ACA VA EL BOTON DE PRODUCTOS */
+.slider-img {
+  flex: 1;
+  text-align: center;
+}
 
 .slider-img img {
-    margin-right: 225px;
-    width: 550px;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
 }
 
 .map {
-    filter: grayscale(100%) invert(92%) contrast(93%);
+  filter: grayscale(100%) invert(92%) contrast(93%);
+  width: 100%;
+  height: 500px;
+  border: none;
 }
 
-/* FOOTER */
-
+/* Footer */
 .footer {
-    padding: 100px 0px;
-    display: flex;
-    justify-content: space-between;
+  padding: 100px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .links h4 {
-    color: white;
-    text-transform: uppercase;
-    margin-bottom: 25px;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 25px;
 }
 
 .links ul li a {
-    color: white;
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: inline-block;
-}
-
-/* HASTA ACA VA EL FOOTER */
-
-/* Asegúrate de que el contenedor padre ocupe toda la altura y use flexbox */
-.info {
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    /* Centra verticalmente */
-    height: 50vh;
-    /* Ocupa toda la altura de la pantalla */
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-/* Imagen puede ir oculta o posicionada dependiendo del diseño */
-.info-img {
-    display: none;
-    /* O ajusta esto si quieres mostrar la imagen */
-}
-
-.info-txt {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-}
-
-.info-txt h2 {
-    font-size: 75px;
-    color: white;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-}
-
-.info-txt p {
-    font-size: 18px;
-    color: white;
-    margin-bottom: 50px;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
 }
 
 button {
-    background-color: black;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    /* opcional para bordes redondeados */
+  background-color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Sección info */
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.info-img {
+  display: none;
+}
+
+.info-txt {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.info-txt h2 {
+  font-size: 50px;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.info-txt p {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu-1,
+  .menu-2 {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slider-txt h1 {
+    font-size: 40px;
+  }
+
+  .info-txt h2 {
+    font-size: 36px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu .navbar ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .menu .navbar ul li {
+    float: none;
+  }
+
+  .social img {
+    margin: 6px;
+  }
 }
