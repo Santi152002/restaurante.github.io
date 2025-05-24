@@ -205,10 +205,10 @@ const inputEditarPrecio = document.getElementById('inputEditarPrecio');
 
 // Simulación de datos de productos
 const productosData = {
-  "Hamburguesa": { descripcion: "Hamburguesa de res", precio: 12000 },
-  "Perro": { descripcion: "Perro caliente con queso", precio: 9000 },
-  "Burrito": { descripcion: "Burrito de pollo", precio: 10000 },
-  "Pizza": { descripcion: "Pizza familiar", precio: 15000 }
+  "Hamburguesa": { descripcion: "", precio: 12000 },
+  "Perro": { descripcion: "", precio: 9000 },
+  "Burrito": { descripcion: "", precio: 10000 },
+  "Pizza": { descripcion: "", precio: 15000 }
 };
 
 // Editar producto
