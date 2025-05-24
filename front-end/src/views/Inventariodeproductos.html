@@ -36,7 +36,7 @@
 </div>
 <div class="opcionesmenu1">
   <div class="empleados">
-    <li><a href="#" class="abrirModalGestion">GESTIONAR CANTIDAD DE PRODUCTOS DISPONIBLES</a></li>
+    <li><a href="#" class="abrirModalCantidad">GESTIONAR CANTIDAD DE PRODUCTOS DISPONIBLES</a></li>
   </div>
 </div>
 <div class="opcionesmenu1">
@@ -136,6 +136,101 @@
     <button id="btnAceptarNotificacion" class="btn-aceptar-notificacion">Aceptar</button>
   </div>
 </div>
+
+<div id="modalCantidad" class="modal" style="display: none;">
+  <div class="modal-contenido" id="contenedorModalCantidad">
+    <span class="cerrar" id="cerrarModalCantidad">&times;</span>
+    <h2>Gestión de Cantidad de Productos</h2>
+
+    <div class="producto-cantidad">
+      <label class="nombre-producto">Hamburguesa</label>
+      <div class="cantidad-control">
+        <label for="cantidad-hamburguesa">Cantidad:</label>
+        <input type="number" id="cantidad-hamburguesa" value="10" min="0">
+      </div>
+    </div>
+
+    <!-- Puedes duplicar esta sección para más productos -->
+    <div class="producto-cantidad">
+      <label class="nombre-producto">Perro</label>
+      <div class="cantidad-control">
+        <label for="cantidad-perro">Cantidad:</label>
+        <input type="number" id="cantidad-perro" value="15" min="0">
+      </div>
+    </div>
+
+        <div class="producto-cantidad">
+      <label class="nombre-producto">Burrito</label>
+      <div class="cantidad-control">
+        <label for="cantidad-perro">Cantidad:</label>
+        <input type="number" id="cantidad-perro" value="15" min="0">
+      </div>
+    </div>
+
+    <div class="contenedor-botones">
+      <button id="btnGuardarCantidad" class="btn-guardar">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de notificación -->
+<div id="modalNotificacion" class="modal-notificacion">
+  <div class="modal-contenido-notificacion">
+    <span id="cerrarNotificacion" class="cerrar-notificacion">&times;</span>
+    <p id="mensajeNotificacion">¡Guardado con éxito!</p>
+  </div>
+</div>
+
+<!-- Modal Gestión de Información -->
+<div id="modalInfo" class="modal" style="display: none;">
+  <div class="modal-contenido" id="contenedorModalInfo">
+    <span class="cerrar" id="cerrarModalInfo">&times;</span>
+    <h2>Gestión de Información de Productos</h2>
+
+    <div class="producto-info-item">
+      <span class="nombre-producto">Hamburguesa</span>
+      <button class="btn-editar-info">Editar</button>
+    </div>
+    <div class="producto-info-item">
+      <span class="nombre-producto">Perro</span>
+      <button class="btn-editar-info">Editar</button>
+    </div>
+    <div class="producto-info-item">
+      <span class="nombre-producto">Burrito</span>
+      <button class="btn-editar-info">Editar</button>
+    </div>
+    <div class="producto-info-item">
+      <span class="nombre-producto">Pizza</span>
+      <button class="btn-editar-info">Editar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Flotante para editar producto -->
+<div id="modalEditarInfo" class="modal" style="display: none;">
+  <div class="modal-contenido">
+    <span class="cerrar" id="cerrarEditarInfo">&times;</span>
+    <h3>Editar Producto</h3>
+
+    <label>Nombre:</label>
+    <input type="text" id="inputEditarNombre"><br>
+
+    <label>Imagen:</label>
+    <input type="file" id="inputEditarImagen"><br>
+
+    <label>Información:</label>
+    <textarea id="inputEditarDescripcion"></textarea><br>
+
+    <label>Precio:</label>
+    <input type="number" id="inputEditarPrecio"><br>
+
+    <button id="btnGuardarCambiosInfo">Guardar Cambios</button>
+  </div>
+</div>
+
+
+
+
 
 <script src="/front-end/src/script/Inventariodeproductos.js"></script>
 </body>

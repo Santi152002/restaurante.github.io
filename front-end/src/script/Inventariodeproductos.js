@@ -145,4 +145,98 @@ function mostrarNotificacion(mensaje) {
   }, 3000); // Se cierra en 3 segundos automáticamente
 }
 
+// MODAL GESTIONAR CANTIDAD
+const modalCantidad = document.getElementById("modalCantidad");
+const btnAbrirCantidad = document.querySelector(".abrirModalCantidad");
+const btnCerrarCantidad = document.getElementById("cerrarModalCantidad");
+
+btnAbrirCantidad.addEventListener("click", (e) => {
+  e.preventDefault();
+  modalCantidad.style.display = "flex";
+});
+
+btnCerrarCantidad.addEventListener("click", () => {
+  modalCantidad.style.display = "none";
+});
+
+// GUARDAR CANTIDAD
+document.getElementById("btnGuardarCantidad").addEventListener("click", () => {
+  const hamburguesa = document.getElementById("cantidad-hamburguesa").value;
+  const perro = document.getElementById("cantidad-perro").value;
+
+  // Aquí puedes guardar o enviar los datos donde necesites
+  console.log(`Hamburguesa: ${hamburguesa}, Perro: ${perro}`);
+
+  // Mostrar notificación flotante si la usas, o simplemente cerrar
+  modalCantidad.style.display = "none";
+});
+
+// === Mostrar notificación al guardar cantidades ===
+const btnGuardarCantidad = document.getElementById("btnGuardarCantidad");
+
+btnGuardarCantidad.addEventListener("click", () => {
+  // Aquí podrías agregar lógica para guardar las cantidades si lo necesitas
+  mostrarNotificacion("Cantidad de productos guardada correctamente.");
+});
+
+// Mostrar modal de gestión de información
+const abrirModalInfo = document.querySelector('.abrirModalinfo');
+const modalInfo = document.getElementById('modalInfo');
+const cerrarModalInfo = document.getElementById('cerrarModalInfo');
+
+abrirModalInfo.addEventListener('click', () => {
+  modalInfo.style.display = 'block';
+});
+
+cerrarModalInfo.addEventListener('click', () => {
+  modalInfo.style.display = 'none';
+});
+
+// Mostrar modal de edición
+const modalEditarInfo = document.getElementById('modalEditarInfo');
+const cerrarEditarInfo = document.getElementById('cerrarEditarInfo');
+const btnGuardarCambiosInfo = document.getElementById('btnGuardarCambiosInfo');
+
+// Variables para campos
+const inputEditarNombre = document.getElementById('inputEditarNombre');
+const inputEditarImagen = document.getElementById('inputEditarImagen');
+const inputEditarDescripcion = document.getElementById('inputEditarDescripcion');
+const inputEditarPrecio = document.getElementById('inputEditarPrecio');
+
+// Simulación de datos de productos
+const productosData = {
+  "Hamburguesa": { descripcion: "Hamburguesa de res", precio: 12000 },
+  "Perro": { descripcion: "Perro caliente con queso", precio: 9000 },
+  "Burrito": { descripcion: "Burrito de pollo", precio: 10000 },
+  "Pizza": { descripcion: "Pizza familiar", precio: 15000 }
+};
+
+// Editar producto
+document.querySelectorAll('.btn-editar-info').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const nombreProducto = btn.previousElementSibling.textContent.trim();
+    const producto = productosData[nombreProducto];
+
+    inputEditarNombre.value = nombreProducto;
+    inputEditarDescripcion.value = producto.descripcion;
+    inputEditarPrecio.value = producto.precio;
+
+    modalEditarInfo.style.display = 'block';
+  });
+});
+
+// Cerrar modal edición
+cerrarEditarInfo.addEventListener('click', () => {
+  modalEditarInfo.style.display = 'none';
+});
+
+// Guardar cambios
+btnGuardarCambiosInfo.addEventListener('click', () => {
+  mostrarNotificacion("Cambios realizados correctamente.");
+  modalEditarInfo.style.display = 'none';
+});
+
+
+
+
 
