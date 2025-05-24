@@ -53,6 +53,7 @@ body {
 
 .logo-2 {
   width: 150px;
+  cursor: auto;
 }
 
 .socials {
@@ -73,7 +74,7 @@ body {
 }
 
 .social img {
-  margin: 8px 0 0 10px;
+  margin: 8px 0 0 11px;
 }
 
 .menu .navbar ul li {
@@ -225,6 +226,7 @@ button {
 
 /* Media Queries */
 @media (max-width: 768px) {
+
   .menu-1,
   .menu-2 {
     margin: 0;

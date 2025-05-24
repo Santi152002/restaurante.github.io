@@ -93,7 +93,7 @@ body {
 }
 
 .social img {
-    margin: 8px 0 0 10px;
+    margin: 8px 0 0 11px;
 }
 
 .menu .navbar ul li {
@@ -215,12 +215,12 @@ body {
     display: none;
 }
 
-.tabs input[type="radio"]:checked + label {
+.tabs input[type="radio"]:checked+label {
     border-bottom: 2px solid yellow;
     color: white;
 }
 
-.tabs input[type="radio"]:checked + label + .tab {
+.tabs input[type="radio"]:checked+label+.tab {
     display: block;
 }
 
@@ -466,7 +466,7 @@ body {
         width: 100%;
     }
 
-    #menu:checked ~ .navbar {
+    #menu:checked~.navbar {
         display: flex;
     }
 
@@ -510,7 +510,7 @@ body {
         height: auto;
     }
 
-    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets,
     .swiper-pagination-horizontal,
     .swiper-pagination-custom,
