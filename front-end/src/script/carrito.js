@@ -7,6 +7,11 @@ document.getElementById("boton-carrito").addEventListener("click", () => {
   renderizarCarrito();
 });
 
+document.getElementById("boton-carrito2").addEventListener("click", () => {
+  document.getElementById("carritoPanel").classList.add("mostrar");
+  renderizarCarrito();
+});
+
 // Cerrar panel carrito
 function cerrarCarrito() {
   document.getElementById("carritoPanel").classList.remove("mostrar");
@@ -47,6 +52,11 @@ function guardarCarrito() {
 function actualizarContador() {
   const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
   document.getElementById("contador-carrito").textContent = totalProductos;
+}
+
+function actualizarContador() {
+  const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+  document.getElementById("contador-carrito2").textContent = totalProductos;
 }
 
 function renderizarCarrito() {
@@ -120,3 +130,5 @@ window.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
   actualizarContador();
 });
+
+

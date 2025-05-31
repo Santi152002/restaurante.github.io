@@ -65,6 +65,24 @@
   /* Importante para evitar que algo se salga */
 }
 
+#contador-carrito2 {
+  position: absolute;
+  top: -30px;
+  right: -35%;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 10;
+  position: relative;
+  /* Para posicionar el contador dentro */
+  overflow: hidden;
+  /* Importante para evitar que algo se salga */
+}
+
+
 /* Contenedor general de la tarjeta */
 .tarjeta-carrito {
   position: relative;
