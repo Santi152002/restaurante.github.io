@@ -13,6 +13,17 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.carrito-flotante {
+    display: none;
+}
+
+.carrito-header {
+    display: flex;
+}
+
+
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -639,6 +650,21 @@ body {
         font-size: 14px;
         margin-right: 10px;
     }
+
+
+    .carrito-flotante {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+        background: #fff;
+        color: #000;
+    }
+
+    .carrito-header {
+        display: none;
+    }
 }
 
 /* ======= Media Query para celulares pequeños ======= */
@@ -751,6 +777,26 @@ body {
         padding: 8px 12px;
         font-size: 14px;
         margin-right: 0;
+    }
+
+    #boton-carrito-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: absolute;
+        /* necesario para ubicarlo arriba */
+        top: 0;
+        /* al tope del header */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+
+    }
+
+    #boton-carrito-header i {
+        color: red;
+        font-size: 24px;
     }
 }
 
