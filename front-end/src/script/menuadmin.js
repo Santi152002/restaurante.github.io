@@ -24,84 +24,64 @@ document.addEventListener('DOMContentLoaded', () => {
   cerrarModalCrear.addEventListener('click', () => {
     modalCrear.style.display = 'none';
   });
-
   // Crear nuevo empleado
-  formCrearEmpleado.addEventListener('submit', e => {
+  formCrearEmpleado.addEventListener('submit', async e => {
     e.preventDefault();
 
-    const nombre = document.getElementById('nombreCompleto').value;
+    // Obtener valores del formulario
+    const nombreCompleto = document.getElementById('nombreCompleto').value.trim();
+    const nombreUsuario = document.getElementById('nombreUsuario').value.trim();
+    const contrasena = document.getElementById('contrasena').value.trim();
+    const idRol = parseInt(document.getElementById('rolUsuario').value); // Asegúrate que este select exista
 
-    const nuevo = document.createElement('div');
-    nuevo.classList.add('empleados');
-    nuevo.innerHTML = `
-      <span contenteditable="true" class="nombre-empleado">${nombre}</span>
-      <div class="iconos">
-        <a href="#" class="abrir-editar"><ion-icon name="person-outline"></ion-icon></a>
-        <a href="#" class="abrir-eliminar"><ion-icon name="trash-outline"></ion-icon></a>
-      </div>
-    `;
+    // Validar campos (puedes agregar más validaciones si quieres)
+    if (!nombreCompleto || !nombreUsuario || !contrasena || !idRol) {
+      alert('Por favor completa todos los campos');
+      return;
+    }
 
-    document.querySelector('.opcionesmenu1').appendChild(nuevo);
-    modalCrear.style.display = 'none';
-    formCrearEmpleado.reset();
-    asignarEventos(nuevo);
-  });
-
-  // Asignar eventos a todos los botones existentes
-  function asignarEventos(contenedor = document) {
-    contenedor.querySelectorAll('.abrir-editar').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        const empleado = btn.closest('.empleados');
-        empleadoEditando = empleado.querySelector('.nombre-empleado');
-        document.getElementById('nombre').value = empleadoEditando.textContent;
-        modalEditar.style.display = 'flex';
+    try {
+      // Enviar petición al backend
+      const response = await fetch('http://localhost:4000/api/auth/registro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nombre_completo_usuario: nombreCompleto,
+          nombre_usuario: nombreUsuario,
+          contrasena: contrasena,
+          id_roles: idRol
+        })
       });
-    });
 
-    contenedor.querySelectorAll('.abrir-eliminar').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        empleadoAEliminar = btn.closest('.empleados');
-        modalEliminar.style.display = 'flex';
-      });
-    });
-  }
+      const data = await response.json();
 
-  // Guardar edición
-  formEditar.addEventListener('submit', e => {
-    e.preventDefault();
-    if (empleadoEditando) {
-      const nuevoNombre = document.getElementById('nombre').value;
-      empleadoEditando.textContent = nuevoNombre;
-      modalEditar.style.display = 'none';
-      empleadoEditando = null;
+      // Verificar si el registro fue exitoso
+      if (data.success) {
+        // Crear el nuevo bloque visual en el frontend
+        const nuevo = document.createElement('div');
+        nuevo.classList.add('empleados');
+        nuevo.innerHTML = `
+        <span contenteditable="true" class="nombre-empleado">${data.data.nombre}</span>
+        <div class="iconos">
+          <a href="#" class="abrir-editar"><ion-icon name="person-outline"></ion-icon></a>
+          <a href="#" class="abrir-eliminar"><ion-icon name="trash-outline"></ion-icon></a>
+        </div>
+      `;
+        document.querySelector('.opcionesmenu1').appendChild(nuevo);
+
+        // Cerrar modal y limpiar formulario
+        modalCrear.style.display = 'none';
+        formCrearEmpleado.reset();
+        asignarEventos(nuevo);
+      } else {
+        alert(`Error: ${data.message}`);
+      }
+    } catch (error) {
+      console.error('Error al registrar usuario:', error);
+      alert('Ocurrió un error al registrar el usuario');
     }
   });
 
-  // Confirmar eliminación
-  confirmarEliminar.addEventListener('click', () => {
-    if (empleadoAEliminar) {
-      empleadoAEliminar.remove();
-      modalEliminar.style.display = 'none';
-      empleadoAEliminar = null;
-    }
-  });
-
-  // Cerrar modales al hacer clic fuera
-  window.addEventListener('click', e => {
-    if (e.target.classList.contains('modal')) {
-      e.target.style.display = 'none';
-    }
-  });
-
-  // Cerrar botones en modales
-  document.querySelectorAll('.cerrar').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.closest('.modal').style.display = 'none';
-    });
-  });
-
-  // Asignar eventos a elementos existentes al cargar
-  asignarEventos();
-});
+})

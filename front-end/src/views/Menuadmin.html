@@ -12,6 +12,8 @@
 
 <body>
   <header>
+    <button id="cerrarSesion" style="margin-left: auto;">Cerrar sesión</button>
+
     <div class="menu container">
       <img class="logo-1" src="/inicio/images/logoprincipal.jpeg" alt="" />
       <input type="checkbox" id="menu" />
@@ -32,6 +34,8 @@
       </nav>
   </header>
   <!-- Aqui finaliza la barra superior -->
+
+
   <h3 class="titulo">ADMINISTRACION DE EMPLEADOS</h3>
 
   <div class="opcionesmenu1">
@@ -66,19 +70,18 @@
         <input type="text" id="nombre" name="nombre">
 
         <label for="correo">Nombre de usuario</label>
-        <input type="text" id="text" name="correo">
+        <input type="text" id="correo" name="correo">
 
-        <label for="rol">Contraseña:</label>
-        <input type="password" id="contraseña" name="rol">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña">
 
-        <label for="rol">Rol</label>
-        <input type="text" id="rol" name="rol">
+        <label for="rolEditar">Rol:</label>
+        <input type="text" id="rolEditar" name="rolEditar">
 
         <button type="submit">Guardar</button>
       </form>
     </div>
   </div>
-
   <!-- Ventanas flotantes para borrar-->
 
   <div class="modal" id="modalEliminar">
@@ -89,23 +92,34 @@
     </div>
   </div>
 
-  <div id="modalCrear" class="modal">
-    <div class="modal-contenido">
-      <span class="cerrar" id="cerrarModalCrear">&times;</span>
-      <h2>Crear Usuario de Empleado</h2>
-      <form id="formCrearEmpleado">
-        <input type="text" placeholder="Nombre completo" id="nombreCompleto" required><br>
-        <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" required><br>
-        <input type="password" placeholder="Contraseña" id="contrasena" required><br>
-        <input type="text" placeholder="Rol" id="rol" required><br><br>
-        <button type="submit">Guardar</button>
-      </form>
+
+    <!-- Modal de creación -->
+    <div id="modalCrear" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" id="cerrarModalCrear">&times;</span>
+        <h2>Crear Usuario de Empleado</h2>
+        <form id="formCrearEmpleado">
+          <input type="text" placeholder="Nombre completo" id="nombreCompleto" required><br>
+          <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" required><br>
+          <input type="password" placeholder="Contraseña" id="contrasena" required><br>
+  
+          <!-- Select para rol --> 
+          <select id="rolUsuario" required>
+            <option value="">Selecciona un rol</option>
+            <option value="1">Administrador</option>
+            <option value="2">Empleado</option>
+          </select><br><br>
+  
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
     </div>
-  </div>
 
   <script src="/front-end/src/script/menuadmin.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="/front-end/src/script/proteccion.js"></script>
+
 </body>
 
 </html>
