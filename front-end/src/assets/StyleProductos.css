@@ -655,10 +655,10 @@ body {
     .carrito-flotante {
         display: flex;
         position: fixed;
-        top: 10px;
-        left: 10px;
+        top: 80px;
+        left: 873px;
         z-index: 9999;
-        background: #fff;
+        background: #000000;
         color: #000;
     }
 
@@ -797,6 +797,20 @@ body {
     #boton-carrito-header i {
         color: red;
         font-size: 24px;
+    }
+
+    .carrito-flotante {
+        display: flex;
+        position: fixed;
+        top: 60px;
+        left: 373px;
+        z-index: 9999;
+        background: #000000;
+        color: #000;
+    }
+
+    .carrito-header {
+        display: none;
     }
 }
 
