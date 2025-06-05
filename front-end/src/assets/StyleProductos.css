@@ -222,6 +222,20 @@ body {
     padding-top: 25px;
 }
 
+.product-txt p {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    /* Aquí va el truncamiento de 3 líneas: */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 .tabs input[type="radio"] {
     display: none;
 }

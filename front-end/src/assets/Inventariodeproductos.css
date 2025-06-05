@@ -131,7 +131,7 @@ ion-icon:hover {
 
   /* Modal (oculto por defecto) */
 .modal {
-display: none;
+ display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -142,7 +142,7 @@ display: none;
   background-color: rgba(0,0,0,0.4);
 
   /* Para centrar el contenido y permitir scroll si es necesario */
-  display: flex;
+
   justify-content: center;
   align-items: center;
 

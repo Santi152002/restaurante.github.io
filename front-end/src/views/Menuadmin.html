@@ -1,125 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="/front-end/public/imagesGlobal/logo principal2.png"
+      type="image/png"
+    />
+    <title>Administrador</title>
+    <link rel="stylesheet" href="/front-end/src/assets/Menuadmin.css" />
+    <link rel="stylesheet" href="/front-end/src/assets/erroresAdmin.css" />
+    <link rel="stylesheet" href="/front-end/src/assets/cardProducto.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/front-end/public/imagesGlobal/logo principal2.png" type="image/png">
-  <title>Document</title>
-  <link rel="stylesheet" href="/front-end/src/assets/Menuadmin.css">
-
-</head>
-
-<body>
-  <header>
-    <button id="cerrarSesion" style="margin-left: auto;">Cerrar sesión</button>
-
-    <div class="menu container">
-      <img class="logo-1" src="/inicio/images/logoprincipal.jpeg" alt="" />
-      <input type="checkbox" id="menu" />
-      <label for="menu">
-        <img src="images/menu.png" class="menu-icono" alt="" />
-      </label>
-      <!-- barra de navegacion -->
-      <nav class="navbar">
-        <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
-        <div class="menu-1">
-          <ul>
-            <li><a href="/front-end/index.html"><strong>INICIO</strong></a></li>
-            <li><a href="#"><strong>ADMINISTRACION DE EMPLEADOS</strong></a></li>
-            <li><a href="/front-end/src/views/Inventariodeproductos.html"><strong>INVENTARIO DE PRODUCTOS</strong></a></li>
-            <li><a href="MenuEmpleado.html"><strong>PEDIDOS</strong></a></li>
-          </ul>
-        </div>
-      </nav>
-  </header>
-  <!-- Aqui finaliza la barra superior -->
-
-
-  <h3 class="titulo">ADMINISTRACION DE EMPLEADOS</h3>
-
-  <div class="opcionesmenu1">
-    <div class="empleados">
-      <span contenteditable="false" class="nombre-empleado">NOMBRE DE EMPLEADO</span>
-      <div class="iconos">
-        <a href="#" class="abrir-editar" data-id="1">
-          <ion-icon name="person-outline"></ion-icon>
-        </a>
-        <a href="#" class="abrir-eliminar" data-id="1">
-          <ion-icon name="trash-outline"></ion-icon>
-        </a>
+  <body>
+    <!-- Modal para mensajes generales -->
+    <div id="modalMensaje" class="modal-mensaje oculto">
+      <div class="modal-contenido-mensaje">
+        <span id="cerrarModalMensaje" class="cerrar-modal">&times;</span>
+        <p id="textoModalMensaje"></p>
       </div>
     </div>
-  </div>
 
+    <header>
+      <div class="menu container">
+        <img class="logo-1" src="/inicio/images/logoprincipal.jpeg" alt="" />
+        <input type="checkbox" id="menu" />
+        <label for="menu">
+          <img src="images/menu.png" class="menu-icono" alt="" />
+        </label>
+        <nav class="navbar">
+          <img
+            class="logo-2"
+            src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+            alt=""
+          />
+          <div class="menu-1">
+            <ul>
+              <li>
+                <a href="/front-end/index.html"><strong>INICIO</strong></a>
+              </li>
+              <li>
+                <a href="#"><strong>ADMINISTRACION DE EMPLEADOS</strong></a>
+              </li>
+              <li>
+                <a href="/front-end/src/views/Inventariodeproductos.html"
+                  ><strong>INVENTARIO DE PRODUCTOS</strong></a
+                >
+              </li>
+              <li>
+                <a href="/front-end/src/views/cardProducto.html"
+                  ><strong>PEDIDOS</strong></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
 
+    <h3 class="titulo">ADMINISTRACION DE EMPLEADOS</h3>
 
-
-  <div class="guardar">
-    <ul>
-      <li><a href="#" id="abrirModalCrear">CREAR USUARIO DE EMPLEADO</a></li>
-    </ul>
-  </div>
-  <!-- Ventanas flotantes para el humano-->
-  <div class="modal" id="modalEditar">
-    <div class="modal-contenido">
-      <span class="cerrar cerrar-editar">&times;</span>
-      <h2>Editar Información del Empleado</h2>
-      <form id="formEditar">
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre">
-
-        <label for="correo">Nombre de usuario</label>
-        <input type="text" id="correo" name="correo">
-
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña">
-
-        <label for="rolEditar">Rol:</label>
-        <input type="text" id="rolEditar" name="rolEditar">
-
-        <button type="submit">Guardar</button>
-      </form>
+    <div class="guardar">
+      <ul>
+        <li><a href="#" id="abrirModalCrear">CREAR USUARIO DE EMPLEADO</a></li>
+      </ul>
     </div>
-  </div>
-  <!-- Ventanas flotantes para borrar-->
 
-  <div class="modal" id="modalEliminar">
-    <div class="modal-contenido">
-      <span class="cerrar cerrar-eliminar">&times;</span>
-      <h2>¿Estás seguro de eliminar al empleado?</h2>
-      <button id="confirmarEliminar">Sí, eliminar</button>
+    <!-- Contenedor para listar empleados -->
+    <div class="opcionesmenu1">
+      <!-- Aquí se inyectan los usuarios desde JS -->
     </div>
-  </div>
 
-
-    <!-- Modal de creación -->
-    <div id="modalCrear" class="modal">
+    <!-- Modal crear/editar usuario -->
+    <div id="modalCrear" class="modal oculto">
       <div class="modal-contenido">
         <span class="cerrar" id="cerrarModalCrear">&times;</span>
-        <h2>Crear Usuario de Empleado</h2>
-        <form id="formCrearEmpleado">
-          <input type="text" placeholder="Nombre completo" id="nombreCompleto" required><br>
-          <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" required><br>
-          <input type="password" placeholder="Contraseña" id="contrasena" required><br>
-  
-          <!-- Select para rol --> 
-          <select id="rolUsuario" required>
-            <option value="">Selecciona un rol</option>
-            <option value="1">Administrador</option>
-            <option value="2">Empleado</option>
-          </select><br><br>
-  
-          <button type="submit">Guardar</button>
+        <h2 id="tituloModalUsuario">Crear Usuario</h2>
+        <br />
+        <form id="formUsuario" data-id="">
+          <div class="input-group">
+            <input
+              type="text"
+              placeholder="Nombre completo"
+              id="nombreCompleto"
+              class="input-control"
+            />
+            <small class="error" id="errorNombreCompleto"></small>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="text"
+              placeholder="Nombre de usuario"
+              id="nombreUsuario"
+              class="input-control"
+            />
+            <small class="error" id="errorNombreUsuario"></small>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              placeholder="Contraseña"
+              id="contrasena"
+              class="input-control"
+            />
+            <small class="error" id="errorContrasena"></small>
+          </div>
+
+          <div class="input-group">
+            <select id="rolUsuario" class="input-control">
+              <option value="" disabled selected hidden>
+                Selecciona un rol
+              </option>
+              <option value="1">Administrador</option>
+              <option value="2">Empleado</option>
+            </select>
+            <small class="error" id="errorRolUsuario"></small>
+          </div>
+
+          <button type="submit" id="botonEnviarUsuario">Crear usuario</button>
         </form>
       </div>
     </div>
 
-  <script src="/front-end/src/script/menuadmin.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="/front-end/src/script/proteccion.js"></script>
-
-</body>
-
+    <script src="/front-end/src/script/menuadmin.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="/front-end/src/script/proteccion.js"></script>
+    <script src="/front-end/src/script/errores.js"></script>
+  </body>
 </html>

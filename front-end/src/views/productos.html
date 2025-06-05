@@ -1,89 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos | Rapidos y Sabrosos</title>
+    <link
+      rel="icon"
+      href="/front-end/public/imagesGlobal/logo principal2.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="../assets/StyleProductos.css" />
+    <link rel="stylesheet" href="../assets/StyleVentanasFlotantes.css" />
+    <link rel="stylesheet" href="../assets/styleCarritoList.css" />
+    <link rel="stylesheet" href="../assets/mensajeProductos.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Productos | Rapidos y Sabrosos</title>
-  <link rel="icon" href="/front-end/public/imagesGlobal/logo principal2.png" type="image/png">
-  <link rel="stylesheet" href="../assets/StyleProductos.css" />
-  <link rel="stylesheet" href="../assets/StyleVentanasFlotantes.css" />
-  <link rel="stylesheet" href="../assets/styleCarritoList.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <!--boostrap-->
+    <!--boostrap-->
 
-  <!--iconos-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!--iconos-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+  </head>
 
-<!-- Este es el botón del carrito FUERA del body (versión móvil) -->
-<div class="carrito-flotante">
-  <a>
-    <div class="social">
-      <button class="carrito-btn" id="boton-carrito">
-        <i class="bi bi-cart2"></i>
-        <span id="contador-carrito">0</span>
-      </button>
-    </div>
-  </a>
-</div>
+  <!-- Este es el botón del carrito FUERA del body (versión móvil) -->
+  <div class="carrito-flotante">
+    <a>
+      <div class="social">
+        <button class="carrito-btn" id="boton-carrito">
+          <i class="bi bi-cart2"></i>
+          <span id="contador-carrito">0</span>
+        </button>
+      </div>
+    </a>
+  </div>
 
+  <body>
+    <header>
+      <div class="menu container">
+        <img
+          class="logo-1"
+          src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+          alt=""
+        />
+        <input type="checkbox" id="menu" />
+        <label for="menu">
+          <img
+            src="/front-end/public/imagesProductos/menu.png"
+            class="menu-icono"
+            alt=""
+          />
+        </label>
 
-<body>
-  <header>
-    <div class="menu container">
-      <img class="logo-1" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
-      <input type="checkbox" id="menu" />
-      <label for="menu">
-        <img src="/front-end/public/imagesProductos/menu.png" class="menu-icono" alt="" />
-      </label>
+        <!-- barra de navegacion -->
 
-      <!-- barra de navegacion -->
-
-      <nav class="navbar">
-        <div class="menu-1">
-          <ul>
-            <li><a href="/front-end/index.html" class="price" style="font-size: 24px;"><strong>INICIO</strong></a></li>
-            <li><a href="productos.html" class="price" style="font-size: 24px;"><strong>PRODUCTOS</strong></a></li>
-          </ul>
-        </div>
-
-        <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
-
-        <div class="menu-2">
-          <div class="socials carrito-header">
-            <a>
-              <div class="social">
-                <button class="carrito-btn" id="boton-carrito2">
-                  <i class="bi bi-cart2"></i>
-                  <span id="contador-carrito2">0</span>
-                </button>
-              </div>
-            </a>
-
-            <a href="https://www.facebook.com/" target="_blank">
-              <div class="social">
-                <img src="/front-end/public/imagesProductos/s1.svg" alt="" />
-              </div>
-            </a>
-            <a href="https://x.com/" target="_blank">
-              <div class="social">
-                <img src="/front-end/public/imagesProductos/s2.svg" alt="" />
-              </div>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-              <div class="social">
-                <img src="/front-end/public/imagesProductos/s3.svg" alt="" />
-              </div>
-            </a>
+        <nav class="navbar">
+          <div class="menu-1">
+            <ul>
+              <li>
+                <a
+                  href="/front-end/index.html"
+                  class="price"
+                  style="font-size: 24px"
+                  ><strong>INICIO</strong></a
+                >
+              </li>
+              <li>
+                <a href="productos.html" class="price" style="font-size: 24px"
+                  ><strong>PRODUCTOS</strong></a
+                >
+              </li>
+            </ul>
           </div>
-        </div>
-      </nav>
-    </div>
 
+          <img
+            class="logo-2"
+            src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+            alt=""
+          />
+
+          <div class="menu-2">
+            <div class="socials carrito-header">
+              <a>
+                <div class="social">
+                  <button class="carrito-btn" id="boton-carrito2">
+                    <i class="bi bi-cart2"></i>
+                    <span id="contador-carrito2">0</span>
+                  </button>
+                </div>
+              </a>
+
+              <a href="https://www.facebook.com/" target="_blank">
+                <div class="social">
+                  <img src="/front-end/public/imagesProductos/s1.svg" alt="" />
+                </div>
+              </a>
+              <a href="https://x.com/" target="_blank">
+                <div class="social">
+                  <img src="/front-end/public/imagesProductos/s2.svg" alt="" />
+                </div>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank">
+                <div class="social">
+                  <img src="/front-end/public/imagesProductos/s3.svg" alt="" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
     <!--aca va a ir la lista despegable del carrito -->
 
     <!-- Panel lateral del carrito -->
@@ -104,8 +140,8 @@
     <div id="modalCarritoVacio" class="modal-carrito-vacio">
       <div class="modal-contenido">
         <p>
-          Debes seleccionar al menos un producto en tu carrito antes de
-          realizar el pedido.
+          Debes seleccionar al menos un producto en tu carrito antes de realizar
+          el pedido.
         </p>
         <button onclick="cerrarModalCarrito()" class="btn-modal">
           Aceptar
@@ -115,29 +151,59 @@
 
     <div id="ventanaDatosCliente" class="ventana">
       <div class="contenedor-modal--datos-cliente">
-        <span class="cerrar" onclick="cerrarVentanaDatosCliente()">&times;</span>
+        <span class="cerrar" onclick="cerrarVentanaDatosCliente()"
+          >&times;</span
+        >
         <h2>Datos del Cliente</h2>
-        <form id="formularioPedido" class="formulario-cliente" onsubmit="enviarFormularioPedido(event)">
+        <form
+          id="formularioPedido"
+          class="formulario-cliente"
+          onsubmit="enviarFormularioPedido(event)"
+        >
           <div class="contenedor-formulario">
             <label>Nombre:</label>
-            <input type="text" name="nombre" placeholder="Escribe tu nombre" required />
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Escribe tu nombre"
+              required
+            />
 
             <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" pattern="\d{10}" maxlength="10"
-              placeholder="Escribe tu número de telefono" required />
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              pattern="\d{10}"
+              maxlength="10"
+              placeholder="Escribe tu número de telefono"
+              required
+            />
             <small id="errorTelefono" style="color: red; display: none">
               El número debe tener exactamente 10 dígitos sin letras ni
               símbolos.
             </small>
 
             <label>Dirección:</label>
-            <input type="text" name="direccion" placeholder="Indica tu dirección" required />
+            <input
+              type="text"
+              name="direccion"
+              placeholder="Indica tu dirección"
+              required
+            />
 
             <label>Observaciones:</label>
-            <textarea name="observaciones" placeholder="Indicaciones de tu pedido o dirección" rows="3"></textarea>
+            <textarea
+              name="observaciones"
+              placeholder="Indicaciones de tu pedido o dirección"
+              rows="3"
+            ></textarea>
 
             <label>Método de pago:</label>
-            <select name="metodo_pago" onchange="mostrarComprobante(this.value)">
+            <select
+              name="metodo_pago"
+              onchange="mostrarComprobante(this.value)"
+            >
               <option value="Seleccionar">Seleccionar</option>
               <option value="efectivo">Efectivo</option>
               <option value="transferencia">Transferencia</option>
@@ -147,7 +213,10 @@
               Debes seleccionar un método de pago.
             </small>
 
-            <div id="metodoTransferencia" style="display: none; margin-top: 10px">
+            <div
+              id="metodoTransferencia"
+              style="display: none; margin-top: 10px"
+            >
               <label>Selecciona el medio:</label>
               <select name="medio_transferencia">
                 <option value="">Seleccionar</option>
@@ -156,15 +225,25 @@
                 <option value="daviplata">Daviplata</option>
               </select>
               <!-- Error para el Medio de Transferencia -->
-              <small id="errorMedioTransferencia" style="color: red; display: none">
+              <small
+                id="errorMedioTransferencia"
+                style="color: red; display: none"
+              >
                 Debes seleccionar el medio de transferencia.
               </small>
             </div>
 
             <div id="comprobanteAdjunto" style="display: none">
               <label>Adjunta el comprobante:</label>
-              <label for="archivoComprobante" class="contenedor-input--comprobante">
-                <input type="file" id="archivoComprobante" name="archivoComprobante" />
+              <label
+                for="archivoComprobante"
+                class="contenedor-input--comprobante"
+              >
+                <input
+                  type="file"
+                  id="archivoComprobante"
+                  name="archivoComprobante"
+                />
               </label>
               <small id="errorComprobante" style="color: red; display: none">
                 Debes adjuntar el comprobante de pago.
@@ -173,7 +252,9 @@
 
             <br />
             <div class="contenedor-boton">
-              <button type="submit" class="BotonPedidoDatosDeCliente">Pagar</button>
+              <button type="submit" class="BotonPedidoDatosDeCliente">
+                Pagar
+              </button>
             </div>
           </div>
         </form>
@@ -191,502 +272,152 @@
 
     <!--HASTA ACA VA LOS DATOS DEL CLIENTE-->
 
+    <!--swiperss-->
     <div class="header-content container">
       <div class="swiper mySwiper-1">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="slider">
-              <div class="slider-txt">
-                <h1>Hamburguesa</h1>
-                <p>
-                  Disfruta de nuestra jugosa hamburguesa preparada con carne
-                  100% de res a la parrilla, servida en un esponjoso pan
-                  brioche con lechuga fresca, tomate, cebolla, pepinillos y
-                  nuestro aderezo especial. Acompáñala con queso derretido y
-                  crujiente tocino para una explosión de sabor en cada bocado.
-                  ¡El verdadero placer de la comida rápida, listo para
-                  satisfacer tu antojo! 🍟🥤
-                </p>
-                <br>
-                <p class="price" style="font-size: 24px;"><strong>$21.500</strong></p>
-                <div class="botones">
-                  <a class="btn-1" onclick="detalleProductoOpen('DetalleProductoHamburguesa')">Comprar</a>
-
-                  <!-- ventanaDetalleProducto -->
-                  <div id="DetalleProductoHamburguesa" class="ventana">
-                    <div class="detalle-producto">
-                      <span class="cerrar"
-                        onclick="detalleProductoClose('DetalleProductoHamburguesa','valorContadorHamburguesa')">&times;</span>
-                      <h2 style="margin-left: 3%; font-size: 40px">
-                        Hamburguesa
-                      </h2>
-                      <div class="contenido-producto">
-                        <img id="urlH" src="/front-end/public/imagesProductos/slider1.png" alt="" />
-                        <div class="descripcion">
-                          <p>
-                            Disfruta de nuestra jugosa hamburguesa preparada
-                            con carne 100% de res a la parrilla, servida en un
-                            esponjoso pan brioche con lechuga fresca, tomate,
-                            cebolla, pepinillos y nuestro aderezo especial.
-                            Acompáñala con queso derretido y crujiente tocino
-                            para una explosión de sabor en cada bocado. ¡El
-                            verdadero placer de la comida rápida, listo para
-                            satisfacer tu antojo! 🍟🥤
-                          </p>
-                          <br />
-                          <p class="price" style="font-size: 24px;"><strong>$21.500</strong></p>
-                          <div class="contador">
-                            <button class="Boton Boton-restar" onclick="negativo('valorContadorHamburguesa')">
-                              -
-                            </button>
-                            <!--por defecto estara en 1 -->
-                            <span class="valor" id="valorContadorHamburguesa" style="color: black">1</span>
-                            <button class="Boton Boton-sumar" onclick="positivo('valorContadorHamburguesa')">
-                              +
-                            </button>
-                          </div>
-                          <a style="
-                                font-size: -5%;
-                                padding: 2% 5%;
-                                margin-top: 5%;
-                              " class="btn-1"
-                            onclick="agregarAlCarrito('hamburguesa', 'valorContadorHamburguesa', 21500, document.getElementById('urlH').src)">agregar</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a onclick="location.href='#menu_principal'" class="btn-1">Menu</a>
-                </div>
-              </div>
-              <div class="slider-img">
-                <img src="/front-end/public/imagesProductos/slider1.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slider">
-              <div class="slider-txt">
-                <h1>sandwich</h1>
-                <p>
-                  Ingredientes de calidad, pan artesanal y combinaciones
-                  irresistibles. Elige tu favorito y disfrútalo en cada
-                  bocado. 🥪🥪
-                </p>
-                <br>
-                <p class="price" style="font-size: 24px;"><strong>$10.000</strong></p>
-                <div class="botones">
-                  <a onclick="detalleProductoOpen('DetalleProductoSandwich')" class="btn-1">Comprar</a>
-                  <!-- ventanaDetalleProducto -->
-                  <div id="DetalleProductoSandwich" class="ventana">
-                    <div class="detalle-producto">
-                      <span class="cerrar"
-                        onclick="detalleProductoClose('DetalleProductoSandwich','valorContadorSandwich')">&times;</span>
-                      <h2 style="margin-left: 3%; font-size: 40px">
-                        Sandwich
-                      </h2>
-                      <div class="contenido-producto">
-                        <img id="urlS" src="/front-end/public/imagesProductos/slider2.png" alt="" />
-                        <div class="descripcion">
-                          <p>
-                            Ingredientes de calidad, pan artesanal y
-                            combinaciones irresistibles. Elige tu favorito y
-                            disfrútalo en cada bocado. 🥪🥪
-                          </p>
-                          <br>
-                          <p class="price" style="font-size: 24px;"><strong>$10.000</strong></p>
-                          <div class="contador">
-                            <button class="Boton Boton-restar" onclick="negativo('valorContadorSandwich')">
-                              -
-                            </button>
-                            <!--por defecto estara en 1 -->
-                            <span class="valor" id="valorContadorSandwich" style="color: black">1</span>
-                            <button class="Boton Boton-sumar" onclick="positivo('valorContadorSandwich')">
-                              + </button>
-                          </div>
-                          <a style="
-                                font-size: -5%;
-                                padding: 2% 5%;
-                                margin-top: 5%;
-                              " class="btn-1"
-                            onclick="agregarAlCarrito('Sandwich', 'valorContadorSandwich', 10000, document.getElementById('urlS').src)">agregar</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a onclick="location.href='#menu_principal'" class="btn-1">Menu</a>
-                </div>
-              </div>
-
-              <div class="slider-img">
-                <img src="/front-end/public/imagesProductos/slider2.png" alt="" />
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slider">
-              <div class="slider-txt">
-                <h1>Hamburguesa Clásica</h1>
-                <p>
-                  Jugosa carne de res a la parrilla, acompañada de queso
-                  derretido, crujiente lechuga, tomate fresco, cebolla morada
-                  y pepinillos, todo dentro de un suave pan con semillas de
-                  sésamo. Servida con nuestra irresistible salsa especial,
-                  esta hamburguesa es el equilibrio perfecto entre sabor,
-                  frescura y textura. Ideal para satisfacer tu antojo en
-                  cualquier momento del día.
-                </p>
-                <br>
-                <p class="price" style="font-size: 24px;"><strong>$16.000</strong></p>
-                <div class="botones">
-                  <a onclick="detalleProductoOpen('DetalleProductoClasica')" class="btn-1">Comprar</a>
-
-                  <!-- ventanaDetalleProducto -->
-                  <div id="DetalleProductoClasica" class="ventana">
-                    <div class="detalle-producto">
-                      <span class="cerrar"
-                        onclick="detalleProductoClose('DetalleProductoClasica','valorContadorClasica')">&times;</span>
-                      <h2 style="margin-left: 3%; font-size: 40px">
-                        Hamburguesa Clásica
-                      </h2>
-                      <div class="contenido-producto">
-                        <img id="urlC" src="/front-end/public/imagesProductos/slider3.png" alt="" />
-                        <div class="descripcion">
-                          <p>
-                            Jugosa carne de res a la parrilla, acompañada de
-                            queso derretido, crujiente lechuga, tomate fresco,
-                            cebolla morada y pepinillos, todo dentro de un
-                            suave pan con semillas de sésamo. Servida con
-                            nuestra irresistible salsa especial, esta
-                            hamburguesa es el equilibrio perfecto entre sabor,
-                            frescura y textura. Ideal para satisfacer tu
-                            antojo en cualquier momento del día.
-                          </p>
-                          <br>
-                          <p class="price" style="font-size: 24px;"><strong>$16.000</strong></p>
-                          <div class="contador">
-                            <button class="Boton Boton-restar" onclick="negativo('valorContadorClasica')">
-                              -
-                            </button>
-                            <!--por defecto estara en 1 -->
-                            <span class="valor" id="valorContadorClasica" style="color: black">1</span>
-                            <button class="Boton Boton-sumar" onclick="positivo('valorContadorClasica')">
-                              +
-                            </button>
-                          </div>
-                          <a style="
-                                font-size: -5%;
-                                padding: 2% 5%;
-                                margin-top: 5%;
-                              " class="btn-1"
-                            onclick="agregarAlCarrito('Hamburguesa Clasica', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">agregar</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a onclick="location.href='#menu_principal'" class="btn-1">Menu</a>
-                </div>
-              </div>
-              <div class="slider-img">
-                <img src="/front-end/public/imagesProductos/slider3.png" alt="" />
-              </div>
-            </div>
-          </div>
+        <div class="swiper-wrapper" id="contenedor-productos">
+          <!--los productos salgan aqui -->
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
       </div>
     </div>
-  </header>
-
-
-  <main class="products" id="menu_principal">
-    <div class="tabs container">
-      <input type="radio" name="tabs" id="tab1" checked="checked" class="tabInput" value="1" />
-      <label for="tab1">Hamburguesa</label>
-      <div class="tab">
-        <div class="swiper mySwiper-2" id="swiper1">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="product">
-
-                <div class="product-txt">
-                  <h4>HAMBURGUESA CLASICA</h4>
-                  <div class="product-img">
-
-                    <img src="/front-end/public/imagesProductos/food1.png" alt="" />
-                  </div>
-                  <p>
-                    Pan, queso gratinado, lechuga, tomate, salsas y carne
-                    marca Rica.🍔🍔
-                  </p>
-                  <p class="price"><strong>$16.000</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('HAMBURGUESA CLASICA', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-
-                </div>
-              </div>
+    <!--categorias-->
+    <main class="products" id="menu_principal">
+      <div class="tabs container">
+        <!-- HAMBURGUESAS -->
+        <input
+          type="radio"
+          name="tabs"
+          id="tab1"
+          checked
+          class="tabInput"
+          value="1"
+        />
+        <label for="tab1">Hamburguesa</label>
+        <div class="tab">
+          <div class="swiper mySwiper-2" id="swiper1">
+            <div class="swiper-wrapper" id="productos-hamburguesas">
+              <!-- Aquí se insertarán dinámicamente los productos hamburguesas -->
             </div>
-            <div class="swiper-slide">
-              <div class="product">
-
-                <div class="product-txt">
-                  <h4>sandwich clasico</h4>
-                  <div class="product-img">
-
-                    <img src="/front-end/public/imagesProductos/food2.png" alt="" />
-                  </div>
-                  <p>
-                    Pan artesanal, jamon, lechuga fresca, rodajas de tomate,
-                    queso cheddar, y mayonesa especial. 🥪🥪
-                  </p>
-                  <p class="price"><strong>$10.000</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('sandwich clasico', 'valorContadorSandwich', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product">
-
-                <div class="product-txt">
-                  <h4>SUPER HAMBURGUESA</h4>
-                  <div class="product-img">
-
-                    <img src="/front-end/public/imagesProductos/slider1.png" alt="" />
-                  </div>
-                  <p>
-                    carne de res a la parrilla, pan brioche con lechuga fresca, tomate, queso derretido y crujiente
-                    tocino.
-                  </p>
-                  <p class="price"><strong>$21.900</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('SUPER HAMBURGUESA', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-                </div>
-              </div>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- BURRITOS -->
+        <input type="radio" name="tabs" id="tab2" class="tabInput" value="2" />
+        <label for="tab2">Burritos</label>
+        <div class="tab">
+          <div class="swiper mySwiper-2" id="swiper2">
+            <div class="swiper-wrapper" id="productos-burritos">
+              <!-- Aquí se insertarán dinámicamente los productos burritos -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+        <!-- OTROS -->
+        <input type="radio" name="tabs" id="tab3" class="tabInput" value="3" />
+        <label for="tab3">OTROS</label>
+        <div class="tab">
+          <div class="swiper mySwiper-2" id="swiper3">
+            <div class="swiper-wrapper" id="productos-otros">
+              <!-- Aquí se insertarán dinámicamente los productos de la categoría otros -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
         </div>
       </div>
+    </main>
 
-      <input type="radio" name="tabs" id="tab2" checked="checked" class="tabInput" value="2" />
-      <label for="tab2">Burritos</label>
-      <div class="tab">
-        <div class="swiper mySwiper-2" id="swiper2">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="product">
+    <section class="info container">
+      <div class="info-img">
+        <img src="/front-end/public/imagesProductos/info.png" alt="" />
+      </div>
 
-                <div class="product-txt">
-                  <h4>Burrito Naturalito</h4>
-                  <div class="product-img">
-                    <img src="/front-end/public/imagesProductos/food4.png" alt="" />
-                  </div>
-                  <p>
-                    frijoles negros sazonados con tomates jugosos y lechuga
-                    crujiente, todo envuelto en una tortilla suave 🌿🌯
-                  </p>
-                  <p class="price"><strong>$11.000</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('Burrito Naturalito', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product">
+      <div class="info-txt">
+        <h2>sandwich de pollo</h2>
+        <p>
+          Jugoso pollo a la plancha o empanizado, acompañado de vegetales
+          frescos y salsas especiales, todo entre pan suave y dorado. Un clásico
+          irresistible para cualquier hora del día. 🥪🥪
+        </p>
+      </div>
+    </section>
 
-                <div class="product-txt">
-                  <h4>Burrito Ranchero</h4>
-                  <div class="product-img">
-
-                    <img src="/front-end/public/imagesProductos/food5.png" alt="" />
-                  </div>
-                  <p>
-                    arroz esponjoso, carne sazonada al estilo casero, tomates
-                    frescos, lechuga crujiente, maicitos dulces y frijoles
-                    tiernos 🥩🌽🥑🌯
-                  </p>
-                  <p class="price"><strong>$9.700</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('Burrito Ranchero', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product">
-
-                <div class="product-txt">
-                  <h4>Burrito Costa Azul</h4>
-                  <div class="product-img">
-                    <img src="/front-end/public/imagesProductos/food6.png" alt="" />
-                  </div>
-                  <p>
-                    camarones jugosos, pescado fresco, salteados con un toque
-                    de ajo, limón y especias mediterráneas🐙🌯
-                  </p>
-                  <p class="price"><strong>$15.000</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('Burrito Costa Azul', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-                </div>
-              </div>
-            </div>
+    <section class="horario" id="horario">
+      <div class="horario-info container">
+        <div class="horario-contenido">
+          <div class="horario-texto">
+            <h2>Horario</h2>
+            <div class="horario-txt"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <img
+            src="/front-end/public/imagesProductos/Horario.png"
+            alt="Horario"
+            class="horario-img"
+          />
         </div>
       </div>
+    </section>
 
-      <input type="radio" name="tabs" id="tab3" checked="checked" class="tabInput" value="3" />
-      <label for="tab3">OTROS</label>
-      <div class="tab">
-        <div class="swiper mySwiper-2" id="mySwiper-3">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="product">
+    <footer class="footer container">
+      <img
+        class="logo-2"
+        src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+        alt=""
+      />
+      <div class="links">
+        <h4>Direccion</h4>
+        <ul>
+          <li><a>Cl. 33b #20 – 03 Local 9906,</a></li>
+          <li><a>Centro comercial Fundadores.</a></li>
+        </ul>
+      </div>
 
-                <div class="product-txt">
-                  <h4>PolloVeg</h4>
-                  <div class="product-img">
-                    <img src="/front-end/public/imagesProductos/food7.png" alt="" />
-                  </div>
-                  <p>
-                    pollo frito, acompañado de un mix de verduras salteadas.
-                  </p>
-                  <p class="price"><strong>$43.900</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('PolloVeg', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-                </div>
-              </div>
+      <div class="links">
+        <h4>Telefonos</h4>
+        <ul>
+          <li><a>3166348943</a></li>
+          <li><a>3114624826</a></li>
+        </ul>
+      </div>
+      <div class="links">
+        <h4>Redes sociales</h4>
+        <div class="socials">
+          <a href="https://www.facebook.com/" target="_blank">
+            <div class="social">
+              <img src="/front-end/public/imagesProductos/s1.svg" alt="" />
             </div>
-            <div class="swiper-slide">
-              <div class="product">
-
-                <div class="product-txt">
-                  <h4>Chuzo de cerdo</h4>
-                  <div class="product-img">
-
-                    <img src="/front-end/public/imagesProductos/food8.png" alt="" />
-                  </div>
-                  <p>Arepa, tomate, carne de cerdo</p>
-                  <p class="price"><strong>$14.000</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('Chuzo de cerdo', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-                </div>
-              </div>
+          </a>
+          <a href="https://x.com/" target="_blank">
+            <div class="social">
+              <img src="/front-end/public/imagesProductos/s2.svg" alt="" />
             </div>
-            <div class="swiper-slide">
-              <div class="product">
-
-                <div class="product-txt">
-                  <h4>Pizza Clásica</h4>
-                  <div class="product-img">
-
-                    <img src="/front-end/public/imagesProductos/food9.png" alt="" />
-                  </div>
-                  <p>
-                    Cubierta con abundante queso, salsa
-                    de tomate especiada y generosas rodajas de pepperoni
-                    🍕🔥
-                  </p>
-                  <p class="price"><strong>$10.000</strong></p>
-                  <br>
-                  <button class="botonDeCompraMenu"><a
-                      onclick="agregarAlCarrito('Pizza Clasica', 'valorContadorClasica', 16000, document.getElementById('urlC').src)">Comprar</a></button>
-                </div>
-              </div>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <div class="social">
+              <img src="/front-end/public/imagesProductos/s3.svg" alt="" />
             </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          </a>
         </div>
       </div>
-    </div>
-  </main>
+    </footer>
 
-
-  <section class="info container">
-    <div class="info-img">
-      <img src="/front-end/public/imagesProductos/info.png" alt="" />
+    <div id="ventanaMensaje" class="ventana-mensaje oculto">
+      <p id="mensajeTexto"></p>
+      <button id="cerrarMensaje">&times;</button>
     </div>
 
-    <div class="info-txt">
-      <h2>sandwich de pollo</h2>
-      <p>
-        Jugoso pollo a la plancha o empanizado, acompañado de vegetales
-        frescos y salsas especiales, todo entre pan suave y dorado. Un clásico
-        irresistible para cualquier hora del día. 🥪🥪
-      </p>
-    </div>
-  </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="../script/carrito.js"></script>
+    <script src="../script/productos.js"></script>
+    <script src="../script/ventanas.js"></script>
 
-  <section class="horario" id="horario">
-    <div class="horario-info container">
-      <div class="horario-contenido">
-        <div class="horario-texto">
-          <h2>Horario</h2>
-          <div class="horario-txt"></div>
-        </div>
-        <img src="/front-end/public/imagesProductos/Horario.png" alt="Horario" class="horario-img" />
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer container">
-    <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
-    <div class="links">
-      <h4>Direccion</h4>
-      <ul>
-        <li><a>Cl. 33b #20 – 03 Local 9906,</a></li>
-        <li><a>Centro comercial Fundadores.</a></li>
-      </ul>
-    </div>
-
-    <div class="links">
-      <h4>Telefonos</h4>
-      <ul>
-        <li><a>3166348943</a></li>
-        <li><a>3114624826</a></li>
-      </ul>
-    </div>
-    <div class="links">
-      <h4>Redes sociales</h4>
-      <div class="socials">
-        <a href="https://www.facebook.com/" target="_blank">
-          <div class="social">
-            <img src="/front-end/public/imagesProductos/s1.svg" alt="" />
-          </div>
-        </a>
-        <a href="https://x.com/" target="_blank">
-          <div class="social">
-            <img src="/front-end/public/imagesProductos/s2.svg" alt="" />
-          </div>
-        </a>
-        <a href="https://www.instagram.com/" target="_blank">
-          <div class="social">
-            <img src="/front-end/public/imagesProductos/s3.svg" alt="" />
-          </div>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="../script/productos.js"></script>
-  <script src="../script/ventanas.js"></script>
-  <script src="../script/carrito.js"></script>
-  <script src="../script/datosDelCliente.js"></script>
-</body>
-
+    <script src="../script/datosDelCliente.js"></script>
+  </body>
 </html>

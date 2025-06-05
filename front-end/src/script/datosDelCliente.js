@@ -1,9 +1,9 @@
-// VENTANA DE DATOS DE CLIENTE
-
+// Cerrar ventana datos cliente
 function cerrarVentanaDatosCliente() {
   document.getElementById("ventanaDatosCliente").style.display = "none";
 }
 
+// Mostrar u ocultar comprobante según método
 function mostrarComprobante(metodo) {
   const comprobanteDiv = document.getElementById("comprobanteAdjunto");
   const metodoTransferencia = document.getElementById("metodoTransferencia");
@@ -17,20 +17,35 @@ function mostrarComprobante(metodo) {
   }
 }
 
-function enviarFormularioPedido(e) {
-  e.preventDefault();
+//mostrar mensajes de forma amigable
+function mostrarMensaje(texto, tiempo = 4000) {
+  const ventana = document.getElementById("ventanaMensaje");
+  const textoElemento = document.getElementById("mensajeTexto");
+  const botonCerrar = document.getElementById("cerrarMensaje");
 
-  if (!validarFormularioCliente()) {
-    return;
-  }
+  textoElemento.textContent = texto;
+  ventana.classList.remove("oculto");
 
-  finalizarPedido();
+  // Cerrar al hacer clic en el botón
+  botonCerrar.onclick = () => ventana.classList.add("oculto");
+
+  // Auto cerrar después de cierto tiempo
+  setTimeout(() => {
+    ventana.classList.add("oculto");
+  }, tiempo);
 }
 
-function validarFormularioCliente() {
-  // Quitar el e.preventDefault()
+// Manejar envío formulario pedido
+async function enviarFormularioPedido(e) {
+  e.preventDefault();
 
-  // Validar teléfono
+  if (!validarFormularioCliente()) return;
+
+  await finalizarPedido();
+}
+
+// Validar formulario cliente
+function validarFormularioCliente() {
   const telefonoInput = document.getElementById("telefono");
   const errorTelefono = document.getElementById("errorTelefono");
   const telefonoValor = telefonoInput.value.trim();
@@ -40,33 +55,31 @@ function validarFormularioCliente() {
     errorTelefono.style.display = "inline";
     telefonoInput.focus();
     return false;
-  } else {
-    errorTelefono.style.display = "none";
   }
+  errorTelefono.style.display = "none";
 
-  // Validar método de pago
   const metodoPago = document.querySelector('select[name="metodo_pago"]').value;
   const errorMetodoPago = document.getElementById("errorMetodoPago");
 
   if (metodoPago === "Seleccionar") {
     errorMetodoPago.style.display = "inline";
     return false;
-  } else {
-    errorMetodoPago.style.display = "none";
   }
+  errorMetodoPago.style.display = "none";
 
-  // Validar medio si es transferencia
-  const medioTransferencia = document.querySelector('select[name="medio_transferencia"]').value;
-  const errorMedioTransferencia = document.getElementById("errorMedioTransferencia");
+  const medioTransferencia = document.querySelector(
+    'select[name="medio_transferencia"]'
+  ).value;
+  const errorMedioTransferencia = document.getElementById(
+    "errorMedioTransferencia"
+  );
 
   if (metodoPago === "transferencia" && !medioTransferencia) {
     errorMedioTransferencia.style.display = "inline";
     return false;
-  } else {
-    errorMedioTransferencia.style.display = "none";
   }
+  errorMedioTransferencia.style.display = "none";
 
-  // Validar archivo si es transferencia
   const archivoComprobante = document.getElementById("archivoComprobante");
   const errorComprobante = document.getElementById("errorComprobante");
 
@@ -80,34 +93,105 @@ function validarFormularioCliente() {
       return false;
     }
 
-    const extension = archivo.name.split('.').pop().toLowerCase();
+    const extension = archivo.name.split(".").pop().toLowerCase();
     if (!["jpg", "pdf", "png"].includes(extension)) {
-      errorComprobante.textContent = "El comprobante debe ser una imagen en formato JPG, PDF O PNG.";
+      errorComprobante.textContent =
+        "El comprobante debe ser una imagen en formato JPG, PDF O PNG.";
       errorComprobante.style.display = "inline";
       archivoComprobante.value = "";
       archivoComprobante.focus();
       return false;
     }
-
-    errorComprobante.style.display = "none";
   }
+  errorComprobante.style.display = "none";
 
   return true;
 }
 
-function finalizarPedido() {
-  carrito = [];
-  total = 0;
-  guardarCarrito();
+// Finalizar pedido, enviar a backend y limpiar carrito
+async function finalizarPedido() {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  cerrarVentanaDatosCliente();
-  mostrarMensajeExito();
+  if (carrito.length === 0) {
+    mostrarMensaje("El carrito está vacío, no se puede realizar el pedido.");
+    return;
+  }
+
+  const form = document.getElementById("formularioPedido");
+  const formData = new FormData(form);
+
+  // Mapeo método de pago a id
+  let metodoPago = formData.get("metodo_pago");
+  let id_metodo_pago = metodoPago === "transferencia" ? 2 : 1;
+
+  let comprobante = "Sin comprobante";
+  if (metodoPago === "transferencia") {
+    comprobante = "Comprobante adjunto (no implementado subida archivo)";
+  }
+
+  // Preparar array productos para API
+  const productosAPI = carrito.map((item) => ({
+    id_producto: item.id_producto || null,
+    cantidad: item.cantidad,
+  }));
+
+  if (productosAPI.some((p) => p.id_producto === null)) {
+    mostrarMensaje("Error: algún producto no tiene id_producto definido.");
+    return;
+  }
+
+  const body = {
+    nombre: formData.get("nombre"),
+    telefono: formData.get("telefono"),
+    direccion: formData.get("direccion"),
+    observaciones: formData.get("observaciones") || null,
+    comprobante,
+    id_metodo_pago,
+    productos: productosAPI,
+  };
+
+  try {
+    const response = await fetch("http://localhost:4000/api/ordenes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      mostrarMensaje(
+        "Error al enviar el pedido: " +
+          (errorData.message || response.statusText)
+      );
+      return;
+    }
+
+    // Pedido enviado con éxito: limpiar carrito, cerrar modales, mostrar mensaje
+    localStorage.removeItem("carrito");
+    carrito = [];
+    window.dispatchEvent(new Event("carritoActualizado"));
+
+    cerrarVentanaDatosCliente();
+    mostrarMensaje("Pedido enviado correctamente.");
+  } catch (error) {
+    mostrarMensaje("Error al enviar el pedido: " + error.message);
+  }
 }
 
-function mostrarMensajeExito() {
-  document.getElementById("mensajePedidoEnviado").style.display = "flex";
-}
+// Evento para cambio método pago para mostrar/ocultar comprobante
+document
+  .querySelector('select[name="metodo_pago"]')
+  .addEventListener("change", (e) => {
+    mostrarComprobante(e.target.value);
+  });
 
-function cerrarMensajeExito() {
-  document.getElementById("mensajePedidoEnviado").style.display = "none";
-}
+// Escuchar evento para mostrar formulario cliente desde carrito.js
+window.addEventListener("mostrarFormularioPedido", mostrarFormularioPedido);
+
+// Al cargar, actualizar contador carrito
+document.addEventListener("DOMContentLoaded", () => {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+  document.getElementById("contador-carrito").textContent = totalProductos;
+  document.getElementById("contador-carrito2").textContent = totalProductos;
+});

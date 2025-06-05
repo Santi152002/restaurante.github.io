@@ -18,15 +18,20 @@ function cerrarCarrito() {
 }
 
 // Agrega producto al carrito
-function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
-  /*  console.log("📦 Imagen enviada al carrito:", imagen); */
+function agregarAlCarrito(
+  nombre,
+  idCantidad,
+  precio,
+  imagen,
+  descripcion,
+  id_producto
+) {
   const cantidad = parseInt(document.getElementById(idCantidad).textContent);
-  /*   console.log("Imagen enviada al carrito:", imagen); */ // 👈 Verifica que es válida
-  const existente = carrito.find((item) => item.nombre === nombre); // por si ya existe en el carrito
+  const existente = carrito.find((item) => item.nombre === nombre);
 
   if (existente) {
-    existente.cantidad += cantidad; // si existe se le suma cantidad al carrito
-    existente.total += cantidad * precio; // si se va cambiando el precio
+    existente.cantidad += cantidad;
+    existente.total += cantidad * precio;
   } else {
     carrito.push({
       nombre,
@@ -35,28 +40,27 @@ function agregarAlCarrito(nombre, idCantidad, precio, imagen, descripcion) {
       imagen,
       descripcion,
       total: cantidad * precio,
+      id_producto,
     });
   }
 
-  total += cantidad * precio; // va cambiando el precio final
+  total += cantidad * precio;
   guardarCarrito();
+  console.log("Carrito antes de enviar:", carrito);
 }
 
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  console.log(JSON.parse(localStorage.getItem("carrito")));
   renderizarCarrito();
   actualizarContador();
 }
 
 function actualizarContador() {
   const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-  document.getElementById("contador-carrito").textContent = totalProductos;
-}
-
-function actualizarContador() {
-  const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-  document.getElementById("contador-carrito2").textContent = totalProductos;
+  const contador1 = document.getElementById("contador-carrito");
+  const contador2 = document.getElementById("contador-carrito2");
+  if (contador1) contador1.textContent = totalProductos;
+  if (contador2) contador2.textContent = totalProductos;
 }
 
 function renderizarCarrito() {
@@ -64,7 +68,6 @@ function renderizarCarrito() {
   contenedor.innerHTML = "";
 
   carrito.forEach((item, index) => {
-    /* console.log("🖼️ Imagen en renderizarCarrito:", item.imagen); */
     const div = document.createElement("div");
     div.classList.add("item-carrito");
     div.innerHTML = ` 
@@ -72,7 +75,6 @@ function renderizarCarrito() {
         <button class="boton-x" onclick="eliminarProducto(${index})">x</button>
         <div class="contenido-izquierda">
           <img src="${item.imagen}" class="imagen-carrito" />
-
           <div class="contenido-carrito">
             <strong>${item.nombre}</strong>
             <p>$${item.precio}</p>
@@ -89,7 +91,8 @@ function renderizarCarrito() {
   });
 
   total = carrito.reduce((sum, item) => sum + item.total, 0);
-  document.getElementById("totalCarrito").textContent = total.toFixed(2);
+  document.getElementById("totalCarrito").textContent =
+    total.toLocaleString("es-CO");
 }
 
 function cambiarCantidad(index, cambio) {
@@ -100,7 +103,6 @@ function cambiarCantidad(index, cambio) {
   } else {
     carrito[index].total = carrito[index].precio * carrito[index].cantidad;
   }
-  /*   console.log("Carrito actual:", carrito); // Verifica que el objeto tenga imagen */
   guardarCarrito();
 }
 
@@ -109,26 +111,22 @@ function eliminarProducto(index) {
   guardarCarrito();
 }
 
-//PARA MOSTRAR FORMULARIO DATOS DEL CLIENTE
+// Mostrar formulario datos del cliente
 function mostrarFormularioPedido() {
   if (carrito.length === 0) {
-    // Mostrar modal en vez de alert
     document.getElementById("modalCarritoVacio").style.display = "flex";
     return;
-  } else {
-    document.getElementById("carritoPanel").classList.remove("mostrar");
-    document.getElementById("ventanaDatosCliente").style.display = "block";
   }
+  document.getElementById("carritoPanel").classList.remove("mostrar");
+  document.getElementById("ventanaDatosCliente").style.display = "block";
 }
 
-//CIERRA EL MODAL DEL CARRITO VACIO
+// Cerrar modal carrito vacío
 function cerrarModalCarrito() {
   document.getElementById("modalCarritoVacio").style.display = "none";
 }
-// Cuando carga la página
-window.addEventListener("DOMContentLoaded", () => {
-  renderizarCarrito();
-  actualizarContador();
-});
 
-
+// Cerrar panel carrito
+function cerrarCarrito() {
+  document.getElementById("carritoPanel").classList.remove("mostrar");
+}

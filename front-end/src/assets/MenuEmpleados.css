@@ -39,7 +39,7 @@ body {
 }
 
 .logo-2 {
-    width: 200px;
+    width: 100px;
 }
 
 
@@ -98,6 +98,9 @@ body {
     display: flex;
     gap: 20px;
 }
+
+
+
 
 ion-icon {
     color: white;
