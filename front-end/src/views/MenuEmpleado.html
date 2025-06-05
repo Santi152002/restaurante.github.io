@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/front-end/public/imagesGlobal/logo principal2.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/front-end/public/imagesGlobal/logo principal2.png" type="image/png" />
   <title>Pedidos</title>
-  <link rel="stylesheet" href="/front-end/src/assets/MenuEmpleados.css">
-
+  <link rel="stylesheet" href="/front-end/src/assets/MenuEmpleados.css" />
 </head>
 
 <body>
@@ -20,25 +19,54 @@
       <label for="menu">
         <img src="images/menu.png" class="menu-icono" alt="" />
       </label>
-      <!-- barra de navegacion -->
       <nav class="navbar">
         <img class="logo-2" src="/front-end/public/imagesProductos/logoprincipal.jpeg" alt="" />
         <div class="menu-1">
           <ul>
-            <li><a href="/front-end/index.html"><strong>PAGINA PRINCIPAL</strong></a></li>
-            <li><a href="/front-end/src/views/MenuEmpleado.html"><strong>PEDIDOS</strong></a></li>
+            <li><a href="/front-end/index.html" target="_blank" rel="noopener noreferrer"><strong>PAGINA PRINCIPAL</strong></a></li>
+            <li><a href="/front-end/src/views/MenuEmpleado.html" target="_blank" rel="noopener noreferrer"><strong>PEDIDOS</strong></a></li>
           </ul>
         </div>
       </nav>
+    </div>
   </header>
-  <!-- Aqui finaliza la barra superior -->
 
-  
+  <!-- Sección con los pedidos -->
+  <main class="contenedor-pedidos">
+    <div class="pedido">
+      <p class="hora">12:30 pm &nbsp; 06/06/25</p>
+      <br>
+      <p><strong>Pizza:</strong></p>
+      <p>pizza carnes (2) &nbsp; <strong>$15.000</strong></p>
+      <p>pizza hawaiana (1) &nbsp; <strong>$20.000</strong></p>
+      <br>
+      <p><strong>Hamburguesa:</strong></p>
+      <p>Hamburguesa doble carne (2) &nbsp; <strong>$25.000</strong></p>
+      <br>
+      <p><strong>CÓDIGO:</strong> 123</p>
+      <p class="total"><strong>TOTAL: </strong>&nbsp; <strong>$60.000</strong></p>
+    </div>
+    <br>
+    <div class="pedido">
+      <p class="hora">3:00 pm &nbsp; 03/06/25</p>
+      <br>
+      <p><strong>Pizza:</strong></p>
+      <p>pizza carnes (2) &nbsp; <strong>$15.000</strong></p>
+      <p>pizza hawaiana (1) &nbsp; <strong>$20.000</strong></p>
+      <br>
+      <p><strong>Hamburguesa:</strong></p>
+      <p>Hamburguesa doble carne (2) &nbsp; <strong>$25.000</strong></p>
+      <br>
+      <p><strong>CÓDIGO:</strong> 1234</p>
+      <p class="total"><strong>TOTAL: </strong>&nbsp; <strong>$60.000</strong></p>
+    </div>
+  </main>
 
- 
+  <div class="ventas-dia">
+    <p>Ventas del día: &nbsp; <strong>$120.000</strong></p>
+  </div>
+
   <script src="/front-end/src/script/proteccion.js"></script>
-
-
 </body>
 
 </html>
