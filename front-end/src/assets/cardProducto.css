@@ -1,0 +1,47 @@
+ .contenedor-ordenes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: center;
+      }
+
+      .card-orden {
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        padding: 1rem;
+        max-width: 300px;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .orden-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      .orden-cliente,
+      .orden-metodo,
+      .orden-productos {
+        margin-bottom: 0.5rem;
+      }
+
+      .orden-productos ul {
+        padding-left: 1rem;
+        list-style: disc;
+      }
+
+      .ventas-del-dia {
+  margin: 20px auto;
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+  border-left: 5px solid #4caf50;
+  width: fit-content;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}

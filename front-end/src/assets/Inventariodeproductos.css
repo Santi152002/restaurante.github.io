@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #080202;
+    font-family: "Poppins", sans-serif;
+    padding-top: 120px; /* ajusta según el alto visual de tu barra */
+}
+
+
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+}
+
+.menu-1 {
+    margin-right: 180px;
+    margin-top: 5%;
+}
+
+
+.logo-1 {
+    width: 0;
+}
+
+.logo-2 {
+    width: 200px;
+}
+
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #ffffff;
+    display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color: yellow;
+}
+
+#menu {
+    display: none;
+}
+
+/*Aqui finaliza la barra superior*/
+
+.titulo {
+    margin-top: 80px; /* ajusta este valor según el alto real de tu barra */
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+.opcionesmenu1 {
+    margin: 40px;
+}
+
+.opciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding-right: 455px;
+    text-decoration: none;
+    color: white;
+}
+
+.opcionesmenu1 a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.opcionesmenu1 a:hover {
+    color: yellow;
+}
+
+.empleados span {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.iconos {
+    display: flex;
+    gap: 20px;
+}
+
+ion-icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ion-icon:hover {
+    color: yellow;
+  }
+
+
+  /* Modal (oculto por defecto) */
+.modal {
+ display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+
+  /* Para centrar el contenido y permitir scroll si es necesario */
+
+  justify-content: center;
+  align-items: center;
+
+  overflow-y: auto; /* Permite scroll vertical dentro del modal */
+}
+  
+.modal-contenido {
+   background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+
+  max-height: 80vh; /* Limita la altura máxima al 80% de la ventana */
+  overflow-y: auto; /* Permite hacer scroll vertical si contenido es muy alto */
+  width: 90%;
+  max-width: 600px; /* Ajusta el ancho máximo según prefieras */
+}
+
+.modal-contenido input,
+.modal-contenido textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  resize: none;
+}
+  
+  /* Botón de cerrar */
+  .cerrar {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .cerrar:hover {
+    color: yellow;
+  }
+
+  .modal-contenido form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .modal-contenido input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .modal-contenido button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .modal-contenido button:hover {
+    background-color: rgba(23, 23, 23, 0.855);
+    color: #ffffff;
+  }
+
+  .disponibilidad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .disponibilidad span {
+  flex-grow: 1;
+}
+
+  .btn-si,
+  .btn-no {
+    margin-left: 20px;
+  }
+
+  .modal .producto {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.nombre-producto {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.disponibilidad span {
+  margin-right: 10px;
+}
+
+.btn-si,
+.btn-no {
+  padding: 6px 12px;  
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-si {
+  background-color: black;
+  color: white;
+}
+
+.btn-no {
+  background-color: black;
+  color: white;
+}
+
+.btn-guardar {
+  background-color: black;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background-color: black;
+}
+
+.contenedor-botones {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-agregar {
+  background-color: black;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background-color: black;
+}
+
+.campo-producto {
+  margin-bottom: 15px;
+}
+
+.campo-producto label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-nombre,
+.input-imagen,
+.input-info,
+.input-precio {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-info {
+  height: 80px;
+  resize: vertical;
+}
+
+.btn-guardar-cambios {
+  background-color: black;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-guardar-cambios:hover {
+  background-color: black;
+}
+.modal-notificacion {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido-notificacion {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+}
+
+.cerrar-notificacion {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn-aceptar-notificacion {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-aceptar-notificacion:hover {
+  background-color: black;
+}
+
+.btn-editar-info {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-editar-info:hover {
+  background-color: black;
+}
+
+.producto-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.producto-info-item .nombre-producto {
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.producto-info-item .btn-editar-info {
+  padding: 6px 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.producto-info-item .btn-editar-info:hover {
+  background-color: black;
+}
+
+
+
+

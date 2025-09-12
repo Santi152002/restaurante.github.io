@@ -1,0 +1,238 @@
+/* Panel deslizante */
+#carritoPanel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100vh;
+  background-color: #f1ebeb;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.4s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+#carritoPanel.mostrar {
+  right: 0;
+}
+
+#carritoPanel .cerrar-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.item-carrito {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.carrito-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+
+.carrito-btn i {
+  font-size: 24px;
+  color: white;
+  margin-left: 0;
+}
+
+#contador-carrito {
+  position: absolute;
+  top: -30px;
+  right: -35%;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 10;
+  position: relative;
+  /* Para posicionar el contador dentro */
+  overflow: hidden;
+  /* Importante para evitar que algo se salga */
+}
+
+#contador-carrito2 {
+  position: absolute;
+  top: -30px;
+  right: -35%;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 10;
+  position: relative;
+  /* Para posicionar el contador dentro */
+  overflow: hidden;
+  /* Importante para evitar que algo se salga */
+}
+
+
+/* Contenedor general de la tarjeta */
+.tarjeta-carrito {
+  position: relative;
+  justify-content: space-between;
+  background-color: #f1ebeb;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  /* ocupa todo el ancho posible del contenedor */
+  max-width: 300px;
+  /* pero no más de 300px */
+  height: 150px;
+  /* altura fija */
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.info-carrito strong,
+.info-carrito p {
+  margin: 0;
+  white-space: nowrap;
+  /* texto en una sola línea */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* "..." si es muy largo */
+}
+
+.cantidad-controles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cantidad-controles button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #000;
+}
+
+.contador {
+  background-color: #000;
+  color: #f1ebeb;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.boton-x {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.boton-x:hover {
+  color: #8d8989;
+  /* Se oscurece al pasar el mouse */
+}
+
+.contenido-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.imagen-carrito {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.contenido-carrito {
+  display: flex;
+  flex-direction: column;
+  /* Apila nombre y precio uno debajo del otro */
+  justify-content: center;
+}
+
+/* Estilo subtotal con línea punteada */
+.total {
+  position: relative;
+  padding-top: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+}
+
+.total::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-top: 2px dashed #ccc;
+}
+
+/* Botón estilo negro */
+.BotonPedido {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.BotonPedido:hover {
+  background-color: #424242;
+}
+
+.BotonPedidoDatosDeCliente {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.BotonPedidoDatosDeCliente:hover {
+  background-color: yellow;
+  color: black;
+}

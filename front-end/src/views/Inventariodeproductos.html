@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="/front-end/public/imagesGlobal/logo principal2.png"
+      type="image/png"
+    />
+    <title>Inventario</title>
+    <link
+      rel="stylesheet"
+      href="/front-end/src/assets/Inventariodeproductos.css"
+    />
+    <link rel="stylesheet" href="/front-end/src/assets/prueba.css" />
+  </head>
+  <body>
+    <header>
+      <div class="menu container">
+        <img
+          class="logo-1"
+          src="/front-end/public/imagesProductos/logoprincipal.jpeg"
+          alt="Logo"
+        />
+        <input type="checkbox" id="menu" />
+        <nav class="navbar">
+          <img
+            class="logo-2"
+            src="/front-end/public/imagesGlobal/logoprincipal.jpeg"
+            alt="Logo"
+          />
+          <div class="menu-1">
+            <ul>
+              <li>
+                <a href="/front-end/index.html"><strong>INICIO</strong></a>
+              </li>
+              <li>
+                <a href="/front-end/src/views/Menuadmin.html"
+                  ><strong>ADMINISTRACION DE EMPLEADOS</strong></a
+                >
+              </li>
+              <li>
+                <a href="#"><strong>INVENTARIO DE PRODUCTOS</strong></a>
+              </li>
+              <li>
+                <a href="/front-end/src/views/cardProducto.html"
+                  ><strong>PEDIDOS</strong></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <h3 class="titulo">INVENTARIO DE PRODUCTOS</h3>
+
+    <!-- Botones de menú -->
+    <div class="opcionesmenu1">
+      <div class="empleados">
+        <li>
+          <a href="#" class="abrirModalCrear" id="btnAbrirModalCrear"
+            >GESTION DE PRODUCTOS DISPONIBLES</a
+          >
+        </li>
+      </div>
+    </div>
+    <div class="opcionesmenu1">
+      <div class="empleados">
+        <li>
+          <a href="#" class="abrirModalCantidad"
+            >GESTIONAR CANTIDAD DE PRODUCTOS DISPONIBLES</a
+          >
+        </li>
+      </div>
+    </div>
+    <div class="opcionesmenu1">
+      <div class="empleados">
+        <li>
+          <a href="#" class="abrirModalinfo"
+            >GESTIÓN DE INFORMACIÓN DE PRODUCTOS</a
+          >
+        </li>
+      </div>
+    </div>
+
+    <!-- MODAL PRINCIPAL -->
+    <div id="modalCrear" class="modal" style="display: none">
+      <div class="modal-contenido" id="contenedorModalproductos">
+        <span class="cerrar" id="cerrarModalCrear">&times;</span>
+        <h2>Gestión de Productos Disponibles</h2>
+
+        <div id="listaProductos"></div>
+
+        <div class="contenedor-botones">
+          <button id="btnAgregarProducto" class="btn-agregar">
+            Agregar nuevo producto
+          </button>
+          <button id="btnGuardarDisponibilidad" class="btn-guardar">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal agregar producto -->
+    <div id="modalAgregarProducto" class="modal" style="display: none">
+      <div class="modal-contenido">
+        <span class="cerrar" id="cerrarModalAgregar">&times;</span>
+        <h2>Agregar Nuevo Producto</h2>
+        <form id="formNuevoProducto">
+          <label for="nombreProducto">Nombre del producto:</label>
+          <input
+            type="text"
+            id="nombreProducto"
+            name="nombreProducto"
+            required
+          />
+
+          <label for="imagenProducto">Imagen del producto:</label>
+          <input
+            type="file"
+            id="imagenProducto"
+            name="imagenProducto"
+            accept="image/*"
+            required
+          />
+
+          <label for="infoProducto">Información del producto:</label>
+          <textarea id="infoProducto" name="infoProducto" required></textarea>
+
+          <label for="precioProducto">Precio:</label>
+          <input
+            type="number"
+            id="precioProducto"
+            name="precioProducto"
+            step="0.01"
+            required
+          />
+
+          <button type="submit" class="btn-guardar">Guardar producto</button>
+        </form>
+      </div>
+    </div>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div id="modalCantidad" class="modal" style="display: none">
+      <div class="modal-contenido" id="contenedorModalCantidad"></div>
+    </div>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!-- Modal Gestión de Información -->
+    <div id="modalInfo" class="modal" style="display: none">
+      <div class="modal-contenido" id="contenedorModalInfo">
+        <span class="cerrar" id="cerrarModalInfo">&times;</span>
+        <h2>Gestión de Información de Productos</h2>
+      </div>
+    </div>
+
+    <!-- Modal Flotante para editar producto -->
+    <div id="modalEditarInfo" class="modal" style="display: none">
+      <div class="modal-contenido">
+        <span class="cerrar" id="cerrarEditarInfo">&times;</span>
+        <h3>Editar Producto</h3>
+
+        <label>Nombre:</label>
+        <input type="text" id="inputEditarNombre" /><br />
+
+        <label>Imagen:</label>
+        <input type="file" id="inputEditarImagen" /><br />
+
+        <label>Información:</label>
+        <textarea
+          id="inputEditarDescripcion"
+          style="resize: none !important"
+        ></textarea
+        ><br />
+
+        <label>Precio:</label>
+        <input type="number" id="inputEditarPrecio" /><br />
+
+        <button id="btnGuardarCambiosInfo">Guardar Cambios</button>
+      </div>
+    </div>
+
+    <!-- Notificación simple -->
+    <div
+      id="modalNotificacion"
+      class="modal"
+      style="display: none; justify-content: center; align-items: center"
+    >
+      <div
+        style="
+          background: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          min-width: 250px;
+          text-align: center;
+        "
+      >
+        <p id="mensajeNotificacion"></p>
+        <button id="cerrarNotificacion">Cerrar</button>
+      </div>
+    </div>
+    <script src="/front-end/src/script/Inventariodeproductos.js"></script>
+  </body>
+</html>
